@@ -16,6 +16,16 @@ Route::get('/', ['as'=>'home',function () {
 
 });
 
+<<<<<<< HEAD
+Route::get('/about',function(){
+   return view('about');
+});
+
+Route::get('/login',function(){
+    return view('login');
+});
+
+=======
 
 Route::get('/about', ['as'=>'about',function () {
     return view('about');
@@ -26,3 +36,4 @@ Route::get('/about', ['as'=>'about',function () {
 Route::get('doctor',['as'=>'doctor'],function(){
     return view ('doctors');
 });
+>>>>>>> 8fd41b249edf1743644bdeec2287e70b7de8cef9
