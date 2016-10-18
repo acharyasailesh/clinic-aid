@@ -36,4 +36,7 @@
 
 
 
+@yield('doctor')
+@include('inc.fotter')
+
 

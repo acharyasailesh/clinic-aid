@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/laravel-5.2.iml" filepath="$PROJECT_DIR$/.idea/laravel-5.2.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/clinicaid.iml" filepath="$PROJECT_DIR$/.idea/clinicaid.iml" />
+>>>>>>> 8fd41b249edf1743644bdeec2287e70b7de8cef9
     </modules>
   </component>
 </project>
