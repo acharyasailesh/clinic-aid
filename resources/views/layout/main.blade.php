@@ -23,8 +23,17 @@
     <script src="{{asset('js/stats.js')}}"></script>
     <script src="{{asset('js/util.js')}}"></script>
 
-</head>
 
+</head>
 @include('inc.navbar')
+@yield('slider');
+
+
+@yield('about')
+@yield('news')
+
+
+
+
 
 
