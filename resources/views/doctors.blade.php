@@ -26,7 +26,7 @@
         <li><a href="#" class="active" data-group="all">All Departments</a></li>
         <li><a href="#" data-group="healthcare">Health Care</a></li>
         <li><a href="#" data-group="pediatrics">Pediatrics Clinic</a></li>
-        <li><a href="#" data-group="cardiac">Cardiac Clinic</a></li>
+        <li><a href="#" data-group="cardiac">Cardiac Clinic</a></li>k
         <li><a href="#" data-group="gynaecological">Gynaecological</a></li>
     </ul>
     <!-- Doctors Desigination Filters Ends -->
