@@ -12,6 +12,24 @@
 */
 
 Route::get('/', function () {
-    return view('layout.main');
+    return view('welcome');
 });
 
+Route::post('sendemail', function () {
+    if (Request::get ( 'message' ) != null)
+        $data = [
+            'bodyMessage' => Request::get ( 'message' )
+        ];
+    else
+        $data [] = '';
+    
+    Mail::send ( 'email', $data, function ($message) {
+
+        $message->from ( 'sailesh@codesastra.com', 'Just Laravel' );
+
+        $message->to ( Request::get ( 'toEmail' ) )->subject ( 'Learning Laravel test email' );
+    } );
+    return Redirect::back ()->withErrors ( [
+        'Your email has been sent successfully'
+    ] );
+} );
