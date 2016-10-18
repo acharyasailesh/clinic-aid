@@ -27,4 +27,9 @@
 
 @include('inc.navbar')
 
+@yield('about')
+@yield('services')
+
+@include('inc.fotter')
+
 
