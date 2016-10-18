@@ -23,9 +23,37 @@
     <script src="{{asset('js/stats.js')}}"></script>
     <script src="{{asset('js/util.js')}}"></script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 
 @include('inc.navbar')
+@yield('home')
 @yield('doctor')
 @include('inc.fotter')
 

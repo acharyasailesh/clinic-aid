@@ -11,15 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layout.main');
+Route::get('/', ['as'=>'home',function () {
+    return view('home');
+
 });
 
 
-Route::get('/about', function () {
+Route::get('/about', ['as'=>'about',function () {
     return view('about');
-});
+}]);
 
-Route::get('/doctor', function () {
-    return view('doctors');
+
+
+Route::get('doctor',['as'=>'doctor'],function(){
+    return view ('doctors');
 });
