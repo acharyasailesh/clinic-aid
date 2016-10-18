@@ -15,10 +15,26 @@ Route::get('/', function () {
     return view('layout.main');
 });
 
+<<<<<<< Updated upstream
 Route::get('/about', function () {
     return view('about');
 });
+=======
+
+Route::get('/about',function(){
+   return view('about');
+});
+
+Route::get('/login',function(){
+    return view('login');
+});
+
+>>>>>>> Stashed changes
 
 Route::get('/services', function () {
     return view('services');
 });
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
