@@ -26,5 +26,7 @@
 </head>
 
 @include('inc.navbar')
+@yield('doctor')
+@include('inc.fotter')
 
 
