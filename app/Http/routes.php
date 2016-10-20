@@ -11,34 +11,38 @@
 |
 */
 
-Route::get('/', ['as'=>'home',function () {
-    return view('home');
-
-}]);
-
-
-Route::get('/login',function(){
-    return view('login');
-});
-
-
-Route::get('/about', ['as'=>'about',function () {
-    return view('about');
-}]);
-
-
-
-Route::get('doctor',['as'=>'doctor',function(){
-    return view ('doctors');
-}]);
 
 
 Route::group(['middleware'=>'web'],function(){
-    Route::get('/', function () {
-        return view('welcome');
+    Route::get('/', ['as'=>'home',function () {
+        return view('home');
+
+    }]);
+
+
+    Route::get('/login',function(){
+        return view('login');
     });
-    
-    Route::post('sendemail','EmailController@send');    
+
+
+    Route::get('/about', ['as'=>'about',function () {
+        return view('about');
+    }]);
+
+
+
+    Route::get('doctor',['as'=>'doctor',function(){
+        return view ('doctors');
+    }]);
+
+
+    Route::get('contact',['as'=>'contact',function(){
+        return view ('contact');
+    }]);
+
+
+
+    Route::post('sendemail','EmailController@send');
 });
 
 //Route::post('sendemail', function () {

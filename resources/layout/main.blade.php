@@ -25,4 +25,16 @@
 
 </head>
 
+@include('inc.navbar')
+@yield('home')
+@yield('slider')
+@yield('about')
+@yield('news')
+@yield('doctor')
+@yield('contact')
+@yield('services')
+
+@include('inc.fotter')
+
+
 

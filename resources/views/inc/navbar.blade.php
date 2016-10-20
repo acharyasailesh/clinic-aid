@@ -45,7 +45,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="{{route('home')}}">Home</a></li>
-                        <li><a href="{{route('')}}">About</a></li>
+                        <li><a href="{{route('about')}}">About</a></li>
                         <li><a href="http://sainathchillapuram.com/BS/mediplus/demos/hospital/html-fullwidth/services.html">Services</a></li>
                         <li class="dropdown">
                             <a href="http://sainathchillapuram.com/BS/mediplus/demos/hospital/html-fullwidth/#" class="dropdown-toggle" data-toggle="dropdown">
