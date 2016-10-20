@@ -11,6 +11,7 @@
 |
 */
 
+<<<<<<< Updated upstream
 Route::get('/', function () {
     return view('layout.main');
 });
@@ -34,3 +35,33 @@ Route::get('/doctor', function () {
     return view('doctors');
 });
 >>>>>>> 8fd41b249edf1743644bdeec2287e70b7de8cef9
+=======
+
+
+Route::group(['middleware'=>'web'],function(){
+    Route::get('/', function () {
+        return view('welcome');
+    });
+    
+    Route::post('sendemail','EmailController@send');    
+});
+
+//Route::post('sendemail', function () {
+//    if (Request::get ( 'message' ) != null)
+//        $data = [
+//            'bodyMessage' => Request::get ( 'message' )
+//        ];
+//    else
+//        $data [] = '';
+//
+//    Mail::send ( 'email', $data, function ($message) {
+//
+//        $message->from ( 'sailesh@codesastra.com', 'Just Laravel' );
+//
+//        $message->to ( Request::get ( 'toEmail' ) )->subject ( 'Learning Laravel test email' );
+//    } );
+//    return Redirect::back ()->withErrors ( [
+//        'Your email has been sent successfully'
+//    ] );
+//} );
+>>>>>>> Stashed changes

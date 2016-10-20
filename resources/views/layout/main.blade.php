@@ -26,6 +26,7 @@
 
 </head>
 @include('inc.navbar')
+<<<<<<< Updated upstream
 @yield('slider');
 
 
@@ -38,5 +39,9 @@
 
 @yield('doctor')
 @include('inc.fotter')
+=======
+@yield('contact')
+
+>>>>>>> Stashed changes
 
 
