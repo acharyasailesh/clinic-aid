@@ -14,7 +14,7 @@
 Route::get('/', ['as'=>'home',function () {
     return view('home');
 
-});
+}]);
 
 
 Route::get('/login',function(){
@@ -28,9 +28,9 @@ Route::get('/about', ['as'=>'about',function () {
 
 
 
-Route::get('doctor',['as'=>'doctor'],function(){
+Route::get('doctor',['as'=>'doctor',function(){
     return view ('doctors');
-});
+}]);
 
 
 Route::group(['middleware'=>'web'],function(){

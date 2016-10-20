@@ -1,7 +1,7 @@
 @extends('layout.main')
 @section('home')
+    @include('inc.slider')
 
-<<<<<<< HEAD
 
 <section class="slider clearfix">
     <div id="camera_wrap_1" class="camera_wrap camera_white_skin" style="display: block; height: 675px;"><div class="camera_fakehover"><div class="camera_src paused camerastarted hovered">
@@ -639,9 +639,9 @@
 <!-- Main Container Ends -->
 
     @endsection
-=======
-    @include('inc.slider')
+
+
 
 
 @endsection
->>>>>>> origin/master
+
