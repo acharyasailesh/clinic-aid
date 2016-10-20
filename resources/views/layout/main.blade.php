@@ -30,4 +30,7 @@
 @yield('news')
 @yield('doctor')
 @yield('contact')
+@yield('services')
+
 @include('inc.fotter')
+

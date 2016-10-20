@@ -59,3 +59,7 @@ Route::group(['middleware'=>'web'],function(){
 //        'Your email has been sent successfully'
 //    ] );
 //} );
+
+Route::get('/services', function () {
+    return view('services');
+});

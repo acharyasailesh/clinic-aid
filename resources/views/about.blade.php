@@ -1,6 +1,7 @@
 @extends('layout.main')
 @section('about')
-        This is about page
 
-@endsection
+    @include('inc.aboutcontent')
 
+
+    @endsection
