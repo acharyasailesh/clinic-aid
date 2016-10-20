@@ -23,25 +23,11 @@
     <script src="{{asset('js/stats.js')}}"></script>
     <script src="{{asset('js/util.js')}}"></script>
 
-
 </head>
 @include('inc.navbar')
-<<<<<<< Updated upstream
 @yield('slider');
-
-
 @yield('about')
 @yield('news')
-
-
-
-
-
 @yield('doctor')
-@include('inc.fotter')
-=======
 @yield('contact')
-
->>>>>>> Stashed changes
-
-
+@include('inc.fotter')

@@ -11,31 +11,26 @@
 |
 */
 
-<<<<<<< Updated upstream
-Route::get('/', function () {
-    return view('layout.main');
+Route::get('/', ['as'=>'home',function () {
+    return view('home');
+
 });
 
-<<<<<<< HEAD
-Route::get('/about',function(){
-   return view('about');
-});
 
 Route::get('/login',function(){
     return view('login');
 });
 
-=======
 
-Route::get('/about', function () {
+Route::get('/about', ['as'=>'about',function () {
     return view('about');
-});
+}]);
 
-Route::get('/doctor', function () {
-    return view('doctors');
+
+
+Route::get('doctor',['as'=>'doctor'],function(){
+    return view ('doctors');
 });
->>>>>>> 8fd41b249edf1743644bdeec2287e70b7de8cef9
-=======
 
 
 Route::group(['middleware'=>'web'],function(){
@@ -64,4 +59,3 @@ Route::group(['middleware'=>'web'],function(){
 //        'Your email has been sent successfully'
 //    ] );
 //} );
->>>>>>> Stashed changes
