@@ -44,6 +44,7 @@
                 <!-- Navbar Collapse Starts -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
+<<<<<<< Updated upstream
                         <li class="active"><a href="http://sainathchillapuram.com/BS/mediplus/demos/hospital/html-fullwidth/index.html">Home</a></li>
                         <li><a href="http://sainathchillapuram.com/BS/mediplus/demos/hospital/html-fullwidth/about.html">About</a></li>
                         <li><a href="http://sainathchillapuram.com/BS/mediplus/demos/hospital/html-fullwidth/services.html">Services</a></li>
@@ -56,6 +57,13 @@
                                 <li><a href="http://sainathchillapuram.com/BS/mediplus/demos/hospital/html-fullwidth/doctor-profile.html">Doctor Profile</a></li>
                             </ul>
                         </li>
+=======
+                        <li class="active"><a href="{{route('home')}}">Home</a></li>
+                        <li><a href="{{route('about')}}">About</a></li>
+                        <li><a href="{{route('services')}}">Services</a></li>
+                        <li><a href="{{route('doctors')}}">Doctors</a></li>
+
+>>>>>>> Stashed changes
                         <li class="dropdown">
                             <a href="http://sainathchillapuram.com/BS/mediplus/demos/hospital/html-fullwidth/#" class="dropdown-toggle" data-toggle="dropdown">
                                 Pages
@@ -67,16 +75,9 @@
                                 <li><a href="http://sainathchillapuram.com/BS/mediplus/demos/hospital/html-fullwidth/404.html">404 Page</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a href="http://sainathchillapuram.com/BS/mediplus/demos/hospital/html-fullwidth/#" class="dropdown-toggle" data-toggle="dropdown">
-                                News
-                            </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="http://sainathchillapuram.com/BS/mediplus/demos/hospital/html-fullwidth/news.html">News</a></li>
-                                <li><a href="http://sainathchillapuram.com/BS/mediplus/demos/hospital/html-fullwidth/news-single.html">News Single Post</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="http://sainathchillapuram.com/BS/mediplus/demos/hospital/html-fullwidth/contact.html">Contact</a></li>
+                        <li><a href="{{route('news')}}">News</a></li>
+
+                        <li><a href="{{route('contactform')}}">Contact</a></li>
                     </ul>
                 </div>
                 <!-- Navbar Collapse Ends -->

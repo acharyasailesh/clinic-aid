@@ -26,5 +26,16 @@
 </head>
 
 @include('inc.navbar')
+<<<<<<< Updated upstream
+=======
+@yield('home')
+@yield('doctors')
+@yield('about')
+@yield('news')
+@yield('services')
+@yield('contactform')
+
+@include('inc.fotter')
+>>>>>>> Stashed changes
 
 

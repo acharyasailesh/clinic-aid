@@ -25,4 +25,10 @@
 
 </head>
 
+@include('inc.navbar')
 
+@yield('home')
+@yield('about')
+@yield('doctors')
+@yield('news')
+@include('inc.footer')
