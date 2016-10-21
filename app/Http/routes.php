@@ -13,11 +13,17 @@
 
 
 
+
 Route::group(['middleware'=>'web'],function(){
     Route::get('/', ['as'=>'home',function () {
         return view('home');
 
     }]);
+
+    Route::get('/services', function () {
+        return view('services');
+    });
+
 
 
     Route::get('/login',function(){
@@ -43,7 +49,6 @@ Route::group(['middleware'=>'web'],function(){
 
 
     Route::post('sendemail','EmailController@send');
-});
 
 //Route::post('sendemail', function () {
 //    if (Request::get ( 'message' ) != null)
@@ -64,6 +69,3 @@ Route::group(['middleware'=>'web'],function(){
 //    ] );
 //} );
 
-Route::get('/services', function () {
-    return view('services');
-});
