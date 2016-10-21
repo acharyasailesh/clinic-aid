@@ -1,6 +1,7 @@
 @extends('layout.main')
 @section('home')
 
+    @include('inc.slider')
 
 
 <section class="slider clearfix">
@@ -639,3 +640,4 @@
 <!-- Main Container Ends -->
 
     @endsection
+

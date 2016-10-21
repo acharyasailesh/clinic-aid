@@ -24,18 +24,15 @@
     <script src="{{asset('js/util.js')}}"></script>
 
 </head>
-
 @include('inc.navbar')
-<<<<<<< Updated upstream
-=======
-@yield('home')
-@yield('doctors')
-@yield('about')
-@yield('news')
-@yield('services')
-@yield('contactform')
+    @yield('home')
+    @yield('doctors')
+    @yield('slider');
 
-@include('inc.fotter')
->>>>>>> Stashed changes
+    @yield('about')
+    @yield('news')
+    @yield('services')
+    @yield('contactform')
 
+    @include('inc.fotter')
 

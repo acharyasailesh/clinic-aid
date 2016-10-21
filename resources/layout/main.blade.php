@@ -26,9 +26,12 @@
 </head>
 
 @include('inc.navbar')
+    @yield('home')
+    @yield('slider')
+    @yield('about')
+    @yield('news')
+    @yield('doctor')
+    @yield('contact')
+    @yield('services')
 
-@yield('home')
-@yield('about')
-@yield('doctors')
-@yield('news')
-@include('inc.footer')
+    @include('inc.fotter')

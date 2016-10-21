@@ -1,5 +1,6 @@
 @extends('layout.main')
 @section('news')
+
         <!-- Main Banner Starts -->
 <div class="main-banner two">
         <div class="container">
@@ -362,3 +363,4 @@
 <!-- Main Container Ends -->
 
 @endsection
+
