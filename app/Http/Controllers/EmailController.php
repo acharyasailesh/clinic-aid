@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 
 class EmailController extends Controller
 {
@@ -25,15 +26,15 @@ class EmailController extends Controller
             
         ];
 
-        Mail::send ( 'email', $data, function ($message,Request $request) {
+        Mail::send ( 'email', $data, function ($message)use ($email)  {
 
-            $message->from ( 'sailesh@codesastra.com', 'We will contact you soon' );
+            $message->from ( 'contact@clinicaid.com', 'We will contact you soon' );
 
-            $message->to ( $request['email'] )->subject ( 'Thanks For Contacting Us' );
+            $message->to ( $email )->subject ( 'Thanks For Contacting Us' );
         } );
-        return Redirect::back ()->withErrors ( [
-            'Your email has been sent successfully'
-        ] );
+//        return Redirect::back ()->withErrors ( [
+//            'Your email has been sent successfully'
+//        ] );
         
 
 

@@ -1,26 +1,23 @@
-   @if (count($errors)>0)
-
-   @endif
-
-
         <!-- Contact Form Starts -->
         <div class="col-sm-8 col-xs-12">
             <h3>Get in touch by filling the form below</h3>
             <div class="status alert alert-success contact-status"></div>
-            <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="{{route('sendemail')}}" role="form">
+            {!! Form::open(['route' => 'sendemail']) !!}
+
                 <div class="row">
                     <!-- Name Field Starts -->
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="name">Name </label>
+                            {!!  Form::label('name', 'Name') !!}
                             <input type="text" class="form-control" name="name" id="name" required="required">
+
                         </div>
                     </div>
                     <!-- Name Field Ends -->
                     <!-- Email Field Starts -->
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="email">Email Address </label>
+                            {!!  Form::label('email', 'Email Address',['class' => 'awesome']) !!}
                             <input type="text" class="form-control" name="email" id="email" required="required">
                         </div>
                     </div>
@@ -54,8 +51,8 @@
                     </div>
 
                 </div>
-                {{csrf_field()}}
-            </form>
+
+            {!! Form::close() !!}
         </div>
         <!-- Contact Form Ends -->
 
