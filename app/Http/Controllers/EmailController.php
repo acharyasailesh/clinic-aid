@@ -32,17 +32,17 @@ class EmailController extends Controller
 
             $message->to ( $email )->subject ( 'Thanks For Contacting Us' );
         } );
-//        return Redirect::back ()->withErrors ( [
-//            'Your email has been sent successfully'
-//        ] );
-        
 
-
-
-
+        return redirect()->route('thankyou');
 
     }  //end of send function
 
+
+    public function thankyou()
+    {
+      
+        return view('thankyou');
+    }
 
 
 

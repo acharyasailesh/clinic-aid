@@ -1,7 +1,6 @@
 @extends('layout.main')
 @section('news')
-
-        <!-- Main Banner Starts -->
+           <!-- Main Banner Starts -->
 <div class="main-banner two">
         <div class="container">
                 <h2><span>News Page</span></h2>

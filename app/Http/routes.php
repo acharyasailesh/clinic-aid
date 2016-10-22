@@ -34,6 +34,9 @@ Route::group(['middleware'=>'web'],function(){
         return view('news');
     }]);
 
+    Route::get('thankyou',['as'=>'thankyou','middleware'=>'thankyou','uses'=>'EmailController@thankyou'
+    ]);
+
     Route::post('sendemail',['as'=>'sendemail','uses'=>'EmailController@send']);
 });
 

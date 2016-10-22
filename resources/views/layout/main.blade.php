@@ -25,6 +25,7 @@
 
 </head>
 @include('inc.navbar')
+    @yield('thankyou')
     @yield('home')
     @yield('doctors')
     @yield('slider');
