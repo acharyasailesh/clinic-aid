@@ -3,7 +3,5 @@
 
 @include('inc.contactcontent')
 
-
-
 @endsection
 
