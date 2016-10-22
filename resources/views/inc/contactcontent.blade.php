@@ -1,8 +1,13 @@
+   @if (count($errors)>0)
+
+   @endif
+
+
         <!-- Contact Form Starts -->
         <div class="col-sm-8 col-xs-12">
             <h3>Get in touch by filling the form below</h3>
             <div class="status alert alert-success contact-status"></div>
-            <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php" role="form">
+            <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="{{route('sendemail')}}" role="form">
                 <div class="row">
                     <!-- Name Field Starts -->
                     <div class="col-md-6">
@@ -23,8 +28,8 @@
                     <!-- Phone No Field Starts -->
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="phoneno">Contact Number </label>
-                            <input type="text" class="form-control" name="phoneno" id="phoneno" required="required">
+                            <label for="phoneNo">Contact Number </label>
+                            <input type="text" class="form-control" name="phoneNo" id="phoneno" required="required">
                         </div>
                     </div>
                     <!-- Phone No Field Ends -->
@@ -47,7 +52,9 @@
                     <div class="col-xs-12">
                         <input type="submit" class="btn btn-black text-uppercase" value="Submit">
                     </div>
+
                 </div>
+                {{csrf_field()}}
             </form>
         </div>
         <!-- Contact Form Ends -->
