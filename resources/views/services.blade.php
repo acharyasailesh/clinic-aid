@@ -1,6 +1,7 @@
 @extends('layout.main')
-@section('services')
 
+
+@section('services')
     @include('inc.servicescontent')
 
 @endsection

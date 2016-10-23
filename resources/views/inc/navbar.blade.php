@@ -12,16 +12,16 @@
                     <ul class="list-unstyled list-inline">
                         <li><a href="mailto:care@yourhosptialsname.com">
                                 <i class="fa fa-envelope-o"></i>
-                                care@yourhosptialsname.com
+                                care@clinicaid.com
                             </a></li>
-                        <li><i class="fa fa-phone"></i> Call Us: 1-800-123-4567</li>
+                        <li><i class="fa fa-phone"></i> <?php $telephone="9846142530" ?>Call Us: {{$telephone}}</li>
                     </ul>
                 </div>
             </div>
         </div>
         <!-- Top Bar Ends -->
         <!-- Navbar Starts -->
-        <nav id="nav" class="navbar navbar-default" role="navigation">
+        <nav id="nav" class="navbar navbar-default " role="navigation">
             <div class="container-fluid">
                 <!-- Navbar Header Starts -->
                 <div class="navbar-header">
@@ -34,7 +34,7 @@
                     </button>
                     <!-- Collapse Button Ends -->
                     <!-- Logo Starts -->
-                    <a href="http://sainathchillapuram.com/BS/mediplus/demos/hospital/html-fullwidth/index.html" class="navbar-brand">
+                    <a href="#" class="navbar-brand">
                         <i class="fa fa-heartbeat"></i>
                         Hospitals
                     </a>

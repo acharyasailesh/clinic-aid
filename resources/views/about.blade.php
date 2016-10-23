@@ -1,7 +1,8 @@
 @extends('layout.main')
-@section('about')
+   @section('about')
 
     @include('inc.aboutcontent')
 
-
     @endsection
+
+

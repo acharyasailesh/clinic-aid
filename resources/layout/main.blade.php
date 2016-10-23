@@ -26,6 +26,8 @@
 </head>
 
 @include('inc.navbar')
+
+
     @yield('home')
     @yield('slider')
     @yield('about')

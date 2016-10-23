@@ -33,15 +33,16 @@ class EmailController extends Controller
             $message->to ( $email )->subject ( 'Thanks For Contacting Us' );
         } );
 
-        return redirect()->route('thankyou');
+        return redirect()->route('thankYou');
 
     }  //end of send function
 
 
-    public function thankyou()
+    public function thankYou()
     {
-      
-        return view('thankyou');
+
+        $this->middleware('thankyou');
+        
     }
 
 

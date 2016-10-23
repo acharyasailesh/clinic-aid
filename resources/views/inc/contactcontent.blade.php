@@ -9,7 +9,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             {!!  Form::label('name', 'Name') !!}
-                            <input type="text" class="form-control" name="name" id="name" required="required">
+                            <input type="text" class="form-control" name="name" id="name">
 
                         </div>
                     </div>
@@ -18,7 +18,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             {!!  Form::label('email', 'Email Address',['class' => 'awesome']) !!}
-                            <input type="text" class="form-control" name="email" id="email" required="required">
+                            <input type="text" class="form-control" name="email" id="email">
                         </div>
                     </div>
                     <!-- Email Field Ends -->
@@ -26,7 +26,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="phoneNo">Contact Number </label>
-                            <input type="text" class="form-control" name="phoneNo" id="phoneno" required="required">
+                            <input type="text" class="form-control" name="phoneNo" id="phoneno">
                         </div>
                     </div>
                     <!-- Phone No Field Ends -->
@@ -34,7 +34,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="subject">Subject </label>
-                            <input type="text" class="form-control" name="subject" id="subject" required="required">
+                            <input type="text" class="form-control" name="subject" id="subject">
                         </div>
                     </div>
                     <!-- Subject Field Ends -->
@@ -42,7 +42,7 @@
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label for="message">Your Comments: </label>
-                            <textarea class="form-control" rows="8" name="message" id="message" required="required"></textarea>
+                            <textarea class="form-control" rows="8" name="message" id="message"></textarea>
                         </div>
                     </div>
                     <!-- Message Field Ends -->

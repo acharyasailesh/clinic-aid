@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <!-- Hosptial Information Starts -->
-                <div class="col-md-3 col-sm-4 col-xs-12">
+                <div class="col-md-4 col-sm-4 col-xs-12">
                     <h4>Hosptial Information</h4>
                     <p>
                         Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including.
@@ -32,48 +32,23 @@
                 </div>
                 <!-- Hosptial Information Ends -->
                 <!-- Services Starts -->
-                <div class="col-md-2 col-sm-4 col-xs-12">
+
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
                     <h4>Services</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Pediatric Clinic</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Diagnosis Clinic</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Cardiac Clinic</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Laboratory Analysis</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Dental Clinic</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Gynecological Clinic</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Psychological</a></li>
+
+                        <?php  $services=['Pediatric Clinic','Diagnosis Clinic','Cardiac Clinic','Laboratory Analysis','Dental Clinic','Gynecological Clinic','Psychological']; ?>
+                        @foreach($services as $service)
+
+                            <li><a href="#"><i class="fa fa-angle-right"></i> {{$service}}</a></li>
+                        @endforeach
+
                     </ul>
                 </div>
                 <!-- Services Ends -->
-                <!-- Twitter Starts -->
-                <div class="col-md-3 col-sm-4 col-xs-12">
-                    <h4>Twitter</h4>
-                    <ul class="list-unstyled tweets-list">
-                        <li>
-                            <i class="fa fa-twitter"></i>
-                            Our Hospitals Website Launched.
-                            <a href="#">http://t.co/xyz12abc</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-twitter"></i>
-                            Our Hospitals Twitter Page, please follow.
-                            <a href="#">http://t.co/testlink</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-twitter"></i>
-                            Our Hospitals Facebook Page, please like.
-                            <a href="#">http://t.co/abc123link</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-twitter"></i>
-                            Our Hospitals Broucher Launched.
-                            <a href="#">http://t.co/xyz-test1</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Twitter Ends -->
-                <!-- Signup Newsletter Starts -->
-                <div class="col-md-4 col-xs-12 newsletter-block">
+                 <!-- Signup Newsletter Starts -->
+                <div class="col-md-4  col-xs-12 newsletter-block">
                     <h4>Signup Newsletter</h4>
                     <form action="#" class="newsletter">
                         <div class="form-group">

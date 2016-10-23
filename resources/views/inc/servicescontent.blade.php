@@ -1,20 +1,3 @@
-<!-- Main Banner Starts -->
-<div class="main-banner three">
-    <div class="container">
-        <h2><span>Services</span></h2>
-    </div>
-</div>
-<!-- Main Banner Ends -->
-<!-- Breadcrumb Starts -->
-<div class="breadcrumb">
-    <div class="container">
-        <ul class="list-unstyled list-inline">
-            <li><a href="index.html">Home</a></li>
-            <li class="active">Services</li>
-        </ul>
-    </div>
-</div>
-<!-- Breadcrumb Ends -->
 <!-- Main Container Starts -->
 <div class="container main-container">
     <!-- Services Tab Starts -->

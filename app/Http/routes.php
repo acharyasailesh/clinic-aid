@@ -1,22 +1,15 @@
 <?php
 
 Route::group(['middleware'=>'web'],function(){
-    Route::get('/', ['as'=>'home',function () {
-        return view('home');
-
-    }]);
-
+    Route::get('/', ['as'=>'home','uses'=>'MainController@index']);
 
     Route::get('/login',function(){
         return view('login');
     });
 
-
     Route::get('/about', ['as'=>'about',function () {
         return view('about');
     }]);
-
-
 
     Route::get('doctor',['as'=>'doctors',function(){
         return view ('doctors');
@@ -30,14 +23,11 @@ Route::group(['middleware'=>'web'],function(){
         return view ('contactform');
     }]);
 
-    Route::get('news',['as'=>'news',function(){
-        return view('news');
-    }]);
-
-    Route::get('thankyou',['as'=>'thankyou','middleware'=>'thankyou','uses'=>'EmailController@thankyou'
-    ]);
-
+    Route::get('news',['as'=>'news','uses'=>'NewsController@index']);
     Route::post('sendemail',['as'=>'sendemail','uses'=>'EmailController@send']);
+    Route::get('thankyou',['as'=>'thankYou','uses'=>'EmailController@thankYou']);
+    
+
 });
 
 

@@ -1,20 +1,3 @@
-<!-- Main Banner Starts -->
-<div class="main-banner one">
-    <div class="container">
-        <h2><span>About Us</span></h2>
-    </div>
-</div>
-<!-- Main Banner Ends -->
-<!-- Breadcrumb Starts -->
-<div class="breadcrumb">
-    <div class="container">
-        <ul class="list-unstyled list-inline">
-            <li><a href="index.html">Home</a></li>
-            <li class="active">About Us</li>
-        </ul>
-    </div>
-</div>
-<!-- Breadcrumb Ends -->
 <!-- Main Container Starts -->
 <div class="container">
     <!-- About Intro Text Starts -->

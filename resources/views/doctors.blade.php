@@ -1,25 +1,5 @@
 @extends('layout.main')
-
 @section('doctors')
-
-
-
-<div class="main-banner six">
-    <div class="container">
-        <h2><span>Doctor's</span></h2>
-    </div>
-</div>
-<!-- Main Banner Ends -->
-<!-- Breadcrumb Starts -->
-<div class="breadcrumb">
-    <div class="container">
-        <ul class="list-unstyled list-inline">
-            <li><a href="index.html">Home</a></li>
-            <li class="active">Doctors</li>
-        </ul>
-    </div>
-</div>
-<!-- Breadcrumb Ends -->
 <!-- Main Container Starts -->
 <div class="container main-container">
     <!-- Doctors Desigination Filters Starts -->
