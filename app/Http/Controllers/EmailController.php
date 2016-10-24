@@ -41,8 +41,8 @@ class EmailController extends Controller
     public function thankYou()
     {
 
-        $this->middleware('thankyou');
-        
+        return view('thankYou');
+
     }
 
 

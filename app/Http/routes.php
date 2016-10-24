@@ -4,7 +4,7 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/', ['as'=>'home','uses'=>'MainController@index']);
 
     Route::get('/login',function(){
-        return view('login');
+        return view('inc.slider');
     });
 
     Route::get('/about', ['as'=>'about',function () {
@@ -25,7 +25,7 @@ Route::group(['middleware'=>'web'],function(){
 
     Route::get('news',['as'=>'news','uses'=>'NewsController@index']);
     Route::post('sendemail',['as'=>'sendemail','uses'=>'EmailController@send']);
-    Route::get('thankyou',['as'=>'thankYou','uses'=>'EmailController@thankYou']);
+    Route::get('thankyou',['as'=>'thankYou','middleware'=>'thankYou','uses'=>'EmailController@thankYou']);
     
 
 });

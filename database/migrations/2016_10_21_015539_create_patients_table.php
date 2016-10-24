@@ -14,14 +14,16 @@ class CreatePatientsTable extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-            $table->string('name');
-            $table->integer('gender');
-            $table->string('bloodGroup',3);
-            $table->string('DOB');
+            $table->integer('IdKey')->unsigned()->index();
+            $table->string('firstName');
+            $table->string('middleName');
+            $table->string('lastName');
+            $table->integer('gender')->unsigned();
+            $table->string('bloodGroup', 3)->default("0+");
+            $table->date('DOB');
             $table->string('address');
-            $table->integer('contactNo');
-
+            $table->string('contact', 10);
+            $table->timestamps();
         });
     }
 

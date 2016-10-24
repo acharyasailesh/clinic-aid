@@ -13,7 +13,6 @@
 
                                         @foreach($news as $article)
 
-
                                         <img src="images/news/news-post-img1.jpg" alt="Blog Image" class="img-responsive img-center-sm img-center-xs">
                                         <div class="inner">
                                                 <h4>
@@ -30,19 +29,22 @@
                                                 </ul>
                                                 <p>
                                                   {{$article->description}}
+                                                        {{$article->links}}
+
                                                 </p>
                                                 <a href="news-single.html" class="btn btn-secondary">
                                                         Read More
                                                         <i class="fa fa-arrow-circle-right"></i>
                                                 </a>
                                         </div>
-                                        @endforeach
+
                                 </article>
 
                         </div>
                         <!-- News Post List Ends -->
                         <!-- Pagination Starts -->
                         <div class="clearfix pagination-wrap">
+
                                 <ul class="pagination pull-right">
                                         <li>
                                                 <a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
@@ -56,6 +58,7 @@
                                 </ul>
                         </div>
                         <!-- Pagination Ends -->
+                        @endforeach
                 </div>
                 <!-- Mainarea Ends -->
 
