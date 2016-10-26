@@ -11,25 +11,29 @@
                                 <!-- News Post #1 Starts -->
                                 <article class="news-post">
 
-                                        @foreach($news as $article)
+                                        <?php $i=0;?>
 
-                                        <img src="images/news/news-post-img1.jpg" alt="Blog Image" class="img-responsive img-center-sm img-center-xs">
+                                        @foreach($news as $new)
+
+                                        <img src="{{$image[$i]->path}}" alt="Blog Image" class="img-responsive img-center-sm img-center-xs">
+                                        
+                                        
                                         <div class="inner">
                                                 <h4>
 
-                                                        <a href="news-single.html">{{$article->title}}</a>
+                                                        <a href="news-single.html">{{$new->title}}</a>
                                                 </h4>
                                                 <ul class="list-unstyled list-inline post-meta">
                                                         <li>
                                                                 <i class="fa fa-calendar"></i>
-                                                                Posted on {{$article->created_at}}
+                                                                Posted on {{$new->created_at}}
                                                         </li>
 
 
                                                 </ul>
                                                 <p>
-                                                  {{$article->description}}
-                                                        {{$article->links}}
+                                                  {{$new->description}}
+                                                        {{$new->links}}
 
                                                 </p>
                                                 <a href="news-single.html" class="btn btn-secondary">
@@ -37,6 +41,10 @@
                                                         <i class="fa fa-arrow-circle-right"></i>
                                                 </a>
                                         </div>
+
+                                                      <?php  $i++; ?>
+
+                                                @endforeach
 
                                 </article>
 
@@ -58,7 +66,7 @@
                                 </ul>
                         </div>
                         <!-- Pagination Ends -->
-                        @endforeach
+                        
                 </div>
                 <!-- Mainarea Ends -->
 

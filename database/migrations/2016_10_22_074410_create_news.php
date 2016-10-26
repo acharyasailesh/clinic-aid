@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 
 class CreateNews extends Migration
 {
@@ -19,6 +20,8 @@ class CreateNews extends Migration
             $table->text('description');
             $table->softDeletes();
             $table->timestamp('published_at')->index();
+
+            
         });
     }
 
