@@ -13,10 +13,6 @@
                         <?php $i=1;?>
 
                         @foreach($news as $new)
-
-
-
-
                             <img src="{{$image[$i]->path}}" alt="Blog Image" class="img-responsive img-center-sm img-center-xs">
 
 
@@ -43,6 +39,8 @@
                                     <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>
+
+                            <?php $i++ ?>
                         @endforeach
 
                     </article>

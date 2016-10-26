@@ -1,39 +1,31 @@
 <?php
 
-Route::group(['middleware'=>'web'],function(){
-    Route::get('/', ['as'=>'home','uses'=>'MainController@index']);
-
-
-    Route::get('/about', ['as'=>'about',function () {
+Route::group(['middleware'=>['web']],function() {
+    Route::get('/', ['as' => 'home', 'uses' => 'MainController@index']);
+    Route::get('/about', ['as' => 'about', function () {
         return view('about');
     }]);
-
-    Route::get('doctor',['as'=>'doctors',function(){
-        return view ('doctors');
+    Route::get('doctor', ['as' => 'doctors', function () {
+        return view('doctors');
     }]);
-
-    Route::get('services',['as'=>'services',function(){
-        return view ('services');
+    Route::get('services', ['as' => 'services', function () {
+        return view('services');
     }]);
-
-    Route::get('contactform',['as'=>'contactform',function(){
-        return view ('contactform');
+    Route::get('contactform', ['as' => 'contactform', function () {
+        return view('contactform');
     }]);
+    Route::resource('news', 'NewsController', ['only' => ['index', 'show']]);
+    Route::post('sendemail', ['as' => 'sendemail', 'uses' => 'EmailController@send']);
+    Route::get('thankyou', ['as' => 'thankYou', 'middleware' => 'thankYou', 'uses' => 'EmailController@thankYou']);
 
-    Route::get('news',['as'=>'news','uses'=>'NewsController@index']);
+    Route::get('upload', function () {
+        return view('upload');
+    });
+    Route::post('fileUpload', ['as' => 'fileUpload', 'uses' => 'ImageController@fileUpload']);
 
-    Route::post('sendemail',['as'=>'sendemail','uses'=>'EmailController@send']);
-    Route::get('thankyou',['as'=>'thankYou','middleware'=>'thankYou','uses'=>'EmailController@thankYou']);
-    
-    Route::get('upload', function() {
-     return view('upload');
-});
-        Route::post('fileUpload', ['as'=>'fileUpload','uses'=>'ImageController@fileUpload']);
-
-        Route::get('test',function(){
-            return view('test');
-        });
-
+    Route::get('test', function () {
+        return view('test');
+    });
     Route::auth();
 
 });

@@ -12,24 +12,24 @@ use App\File;
 class ImageController extends Controller
 {
     //
-
 		    public function fileUpload(Request $request)
 
 			{
 
-        $this->validate($request, [
+                    $this->validate($request, [
 
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
-        ]);
+                    ]);
 
 
         $File=new File;
         // $user->title=$request->input('name');
         if(Input::hasFile('image')){
             $file=Input::file('image');
-             $news=News::all();
-              $length=$news->count();
+            $news=News::create(['title'=>'Hellow world','description'=>'This is hellow world']);
+
+              //$length=$news->count();
 
              $File->extension=$file->getClientOriginalExtension();
             
@@ -41,7 +41,7 @@ class ImageController extends Controller
 
             $final=$file->move($destinationPath,$file->getClientOriginalName());
             $File->path=$final;
-            $File->news_id=$length++;
+            $File->news_id=$news->id;
 
 
         }

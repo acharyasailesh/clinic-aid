@@ -48,7 +48,7 @@
                         <li><a href="{{route('about')}}">About</a></li>
                         <li><a href="{{route('services')}}">Services</a></li>
                         <li><a href="{{route('doctors')}}">Doctors</a></li>
-                        <li><a href="{{route('news')}}">News</a></li>
+                        <li><a href="{{route('news.index')}}">News</a></li>
                         <li><a href="{{route('contactform')}}">Contact</a></li>
                     </ul>
                 </div>
@@ -56,4 +56,3 @@
             </div>
         </nav>
         <!-- Navbar Ends -->
-

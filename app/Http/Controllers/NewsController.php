@@ -23,9 +23,11 @@ class NewsController extends Controller
 
     public function show($id)
     {
-        $news=News::all($id);
-        $image=$news->image;
+        $news=News::findorFail($id);
 
-        return view('news',['news'=>$news,'image'=>$image]);
+        $image=$news->file()->get();
+
+
+         return view('news',['news'=>$news,'image'=>$image]);
     }
 }
