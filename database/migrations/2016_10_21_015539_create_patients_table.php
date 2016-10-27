@@ -24,6 +24,7 @@ class CreatePatientsTable extends Migration
             $table->date('DOB');
             $table->string('address');
             $table->string('contact', 10);
+            $table->text('about')->nullable();
             $table->timestamps();
         });
     }

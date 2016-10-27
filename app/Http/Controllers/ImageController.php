@@ -27,7 +27,7 @@ class ImageController extends Controller
         // $user->title=$request->input('name');
         if(Input::hasFile('image')){
             $file=Input::file('image');
-            $news=News::create(['title'=>'Hellow world','description'=>'This is hellow world']);
+            $news=News::create(['title'=>'Hellow world','description'=>'This is hellow world. I am editing new wrold djf. djkfjd djkfsd j djfk djf djkfd jkdf jdkf jdkfjkdjf dkjfd fjd']);
 
               //$length=$news->count();
 

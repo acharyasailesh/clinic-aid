@@ -38,7 +38,7 @@
                     <h4>Services</h4>
                     <ul class="list-unstyled">
 
-                        <?php  $services=['Pediatric Clinic','Diagnosis Clinic','Cardiac Clinic','Laboratory Analysis','Dental Clinic','Gynecological Clinic','Psychological']; ?>
+                        <?php  $services=['Pediatric Clinic','Diagnosis Clinic','Cardiac Clinic','Laboratory Analysis','Dental Clinic','Gynecological Clinic','Psychological'] ?>
                         @foreach($services as $service)
 
                             <li><a href="#"><i class="fa fa-angle-right"></i> {{$service}}</a></li>

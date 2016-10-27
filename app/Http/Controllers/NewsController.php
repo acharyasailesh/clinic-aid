@@ -17,6 +17,7 @@ class NewsController extends Controller
         $news=News::all();
         $image=File::all();
 
+
         return view('news.index',['news'=>$news,'image'=>$image]);
         
     }
@@ -28,6 +29,6 @@ class NewsController extends Controller
         $image=$news->file()->get();
 
 
-         return view('news',['news'=>$news,'image'=>$image]);
+         return view('news.show',['news'=>$news,'image'=>$image]);
     }
 }

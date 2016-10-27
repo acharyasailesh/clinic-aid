@@ -11,9 +11,11 @@ Route::group(['middleware'=>['web']],function() {
     Route::get('services', ['as' => 'services', function () {
         return view('services');
     }]);
-    Route::get('contactform', ['as' => 'contactform', function () {
-        return view('contactform');
-    }]);
+    Route::resource('contact','ContactController',['only'=>['index','store']]);
+
+//    Route::get('contactform', ['as' => 'contactform', function () {
+//        return view('contactform');
+//    }]);
     Route::resource('news', 'NewsController', ['only' => ['index', 'show']]);
     Route::post('sendemail', ['as' => 'sendemail', 'uses' => 'EmailController@send']);
     Route::get('thankyou', ['as' => 'thankYou', 'middleware' => 'thankYou', 'uses' => 'EmailController@thankYou']);
@@ -23,10 +25,74 @@ Route::group(['middleware'=>['web']],function() {
     });
     Route::post('fileUpload', ['as' => 'fileUpload', 'uses' => 'ImageController@fileUpload']);
 
-    Route::get('test', function () {
-        return view('test');
-    });
+//    Route::get('test', function () {
+//        return view('test');
+//    });
     Route::auth();
+
+
+    Route::get('post', ['as' => 'post', function () {
+        return view('admin.post');
+    }]);
+
+
+
+    Route::get('adminabout', ['as' => 'adminabout', function () {
+        return view('admin.about');
+    }]);
+
+    Route::get('editpatient', ['as' => 'editpatient', function () {
+        return view('admin.editpatient');
+    }]);
+
+    Route::get('viewpatient', ['as' => 'viewpatient', function () {
+        return view('admin.viewpatient');
+    }]);
+
+
+
+
+    Route::get('form', ['as' => 'form', function () {
+        return view('admin.form');
+    }]);
+
+    Route::get('editprofile', ['as' => 'editprofile', function () {
+        return view('patient.editprofile');
+    }]);
+
+    Route::get('patientprofile', ['as' => 'patientprofile', function () {
+        return view('patient.patientprofile');
+    }]);
+
+
+    Route::get('viewfollowup', ['as' => 'viewfollowup', function () {
+        return view('patient.viewfollowup');
+    }]);
+
+
+    Route::get('medicalhistory', ['as' => 'medicalhistory', function () {
+        return view('patient.medicalhistory');
+    }]);
+
+   //From Soodep
+
+
+    Route::get('doctorProf',['as'=>'doctorProf','uses'=>'DoctorController@index']);
+
+    Route::get('viewPatient',['as'=>'viewPatient',function(){
+        return view('doctor.viewpatient');
+    }]);
+    Route::get('viewPatientFollowList',['as'=>'viewPatientFollowList',function(){
+        return view('doctor.viewpatientfollowlist');
+    }]);
+    Route::get('doctorform',['as'=>'doctorform',function(){
+        return view('doctor.doctor_form');
+    }]);
+
+
+
+
+
 
 });
 
@@ -54,3 +120,7 @@ Route::group(['middleware'=>['web']],function() {
 
 
 // Route::get('/home', 'HomeController@index');
+Route::get('patient/{id}/edit', 'PatientController@edit');
+
+Route::put('/patient', 'PatientController@update');
+

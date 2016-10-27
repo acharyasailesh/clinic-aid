@@ -10,7 +10,7 @@
                     <!-- News Post #1 Starts -->
                     <article class="news-post">
 
-                        <?php $i=1;?>
+                        <?php $i=0;?>
 
                         @foreach($news as $new)
                             <img src="{{$image[$i]->path}}" alt="Blog Image" class="img-responsive img-center-sm img-center-xs">
@@ -19,7 +19,7 @@
                             <div class="inner">
                                 <h4>
 
-                                    <a href="news-single.html">{{$new->title}}</a>
+                                    <a href="{{route('news.show',['news'=>$new->id])}}">{{$new->title}}</a>
                                 </h4>
                                 <ul class="list-unstyled list-inline post-meta">
                                     <li>
@@ -27,17 +27,22 @@
                                         Posted on {{$new->created_at}}
                                     </li>
 
-
                                 </ul>
                                 <p>
-                                    {{$new->description}}
-                                    {{$new->links}}
+                                    {{substr($new->description,0,100)}}
+
 
                                 </p>
-                                <a href="news-single.html" class="btn btn-secondary">
-                                    Read More
-                                    <i class="fa fa-arrow-circle-right"></i>
-                                </a>
+                                @if(strlen($new->description)>100)
+
+                                <a href="{{route('news.show',['news'=>$new->id])}}" class="btn btn-secondary">
+                                    Read More                                </a>
+
+
+                                @endif
+                                <hr style="color:black"/><hr/>
+
+
                             </div>
 
                             <?php $i++ ?>
