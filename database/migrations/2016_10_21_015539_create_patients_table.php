@@ -14,7 +14,7 @@ class CreatePatientsTable extends Migration
     public function up()
     {
         Schema::create('patients', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unsigned();;
             $table->integer('IdKey')->unsigned()->index();
             $table->string('firstName');
             $table->string('middleName');
@@ -25,8 +25,18 @@ class CreatePatientsTable extends Migration
             $table->string('address');
             $table->string('contact', 10);
             $table->text('about')->nullable();
+            $table->integer('doctor_id')->unsigned();
+            $table->string('email',30)->unique();
+            $table->date('followUp');
+
             $table->timestamps();
+
         });
+
+        Schema::table('patients', function($table) {
+            $table->foreign('doctor_id')->references('id')->on('doctors');
+        });
+
     }
 
     /**

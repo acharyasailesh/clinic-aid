@@ -10,21 +10,40 @@
                         </div>
                         <div>
                             <div class="ibox-content no-padding border-left-right">
-                                <img alt="image" class="img-responsive" src="{{asset('back/img/profile_big.jpg')}}">
+                                <img alt="image" class="img-responsive" src="{{asset($dphoto->path)}}">
                             </div>
                             <div class="ibox-content profile-content">
-                                <h4><strong>Monica Smith</strong></h4>
-                                <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
+                                <h4><strong>Name: {{$doctor->firstName}} {{$doctor->middleName}} {{$doctor->lastName}}</strong></h4>
+
                                 <h5>
                                     About me
                                 </h5>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.
+                                    {{$doctor->about}}
                                 </p>
-                                <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
-                                <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
-                                <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
-                                <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
+
+                                <h5>
+                                    Education
+                                </h5>
+                                <p>
+                                    {{$doctor->education}}
+                                </p>
+
+
+                                <h5>
+                                    Speciality
+                                </h5>
+                                <p>
+                                    {{$doctor->speciality}}
+                                </p>
+                                <h5>
+                                    Contact
+                                </h5>
+
+                                <p><i class="fa fa-map-marker"></i> Facebook: {{$doctor->facebook}}</p>
+                                <p><i class="fa fa-map-marker"></i> Twitter: {{$doctor->twitter}}</p>
+                                <p><i class="fa fa-map-marker"></i> Skype: {{$doctor->facebook}}</p>
+                                <p><i class="fa fa-map-marker"></i> Contact No:  {{$doctor->contact}}</p>
                                </div>
                                 </div>
 
@@ -33,10 +52,10 @@
             </div>
             <div class="footer">
                 <div class="pull-right">
-                    Creaated by<strong> Soodep.</strong>
+                    Creaated by<strong> ClinicAid.com</strong>
                 </div>
                 <div>
-                    <strong>Copyright</strong> GCES &copy; 2016
+                    <strong>Copyright</strong>
                 </div>
             </div>
 

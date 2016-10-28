@@ -9,7 +9,17 @@ class Patient extends Model
     //
 
     protected  $table='patients';
-    public function medicalHistory(){
-        // $this->hasMany()
+    protected  $primaryKey="id";
+
+
+    public function doctor()
+    {
+        return $this->belongsTo('App\Doctor');
     }
+
+    public function medicalHistory()
+    {
+        return $this->hasMany('App\MedicalHistory');
+    }
+
 }

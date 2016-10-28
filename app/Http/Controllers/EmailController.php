@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Doctor;
+use App\Patient;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -42,6 +44,36 @@ class EmailController extends Controller
     {
 
         return view('thankYou');
+
+    }
+
+    public function contact(Request $request,$id,$dEmail)
+    {
+        $patient=Patient::where('id',$id)->first();
+        $followUpdate=$request->input('followUp');
+        $patient->followUp= $followUpdate;
+        $patient->save();
+        $email=$patient->email;
+        $doctorEmail=$dEmail;
+        $doctor=Doctor::where('email',$doctorEmail)->first();
+
+
+      $followUpdate= [
+                        'followDate'=>$request->followUp,
+          '             firstName'=>$doctor->firstName,
+                        'middleName'=>$doctor->lastName
+                    ];
+
+        Mail::send ( 'Doctoremail', $followUpdate, function ($message)use ($email,$doctorEmail)  {
+
+            $message->from ( $doctorEmail, 'Appointment Date Information' );
+
+            $message->to ( $email )->subject ( 'Updated Appointment Date' );
+        } );
+
+       return redirect()->back();
+
+
 
     }
 

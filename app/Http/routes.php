@@ -18,6 +18,10 @@ Route::group(['middleware'=>['web']],function() {
 //    }]);
     Route::resource('news', 'NewsController', ['only' => ['index', 'show']]);
     Route::post('sendemail', ['as' => 'sendemail', 'uses' => 'EmailController@send']);
+
+    Route::post('contactPatient/{id}/{dEmail}', ['as' => 'contactPatient', 'uses' => 'EmailController@contact']);
+
+
     Route::get('thankyou', ['as' => 'thankYou', 'middleware' => 'thankYou', 'uses' => 'EmailController@thankYou']);
 
     Route::get('upload', function () {
@@ -74,20 +78,19 @@ Route::group(['middleware'=>['web']],function() {
         return view('patient.medicalhistory');
     }]);
 
-   //From Soodep
+   //From Soodep doctor dashboard
 
 
     Route::get('doctorProf',['as'=>'doctorProf','uses'=>'DoctorController@index']);
 
-    Route::get('viewPatient',['as'=>'viewPatient',function(){
-        return view('doctor.viewpatient');
-    }]);
+    Route::get('viewPatient',['as'=>'viewPatient','uses'=>'DoctorController@viewPatient']);
+
     Route::get('viewPatientFollowList',['as'=>'viewPatientFollowList',function(){
         return view('doctor.viewpatientfollowlist');
     }]);
-    Route::get('doctorform',['as'=>'doctorform',function(){
-        return view('doctor.doctor_form');
-    }]);
+     Route::get('doctorform/{doctor}',['as'=>'doctorform','uses'=>'DoctorController@show'])->where('doctor','[0-1]+');;
+
+    Route::post('doctorform/{doctor}',['as'=>'doctorform','uses'=>'DoctorController@edit']);
 
 
 

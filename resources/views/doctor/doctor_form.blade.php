@@ -11,41 +11,54 @@
    						<h5>Doctor Form <small>Details of the Doctor.</small></h5>
    					</div>
    					<div class="ibox-content">
-						<form id="my-awesome-dropzone" class="dropzone dz-clickable" action="#">
 
-							<div class="col-sm-8">
-								<div class="dropzone-previews"></div>
-								<button type="submit" class="btn btn-primary pull-right">Submit this form!</button>
+						<form id="my-awesome-dropzone" class="dropzone dz-clickable" action="#" file="true" name="image" enctype="multipart/form-data">
+
+							<div class="col-sm-8" name="image">
+								<div class="dropzone-previews" name="image"></div>
+
 							</div>
 
 							<div class="dz-default dz-message"><span>Drop files here to upload</span></div></form>
    					</div>
+
+
    					<div class="ibox-content">
-   						<form method="get" class="form-horizontal">
-   							<div class="form-group"><label class="col-sm-2 control-label">Name</label>
+
+   						<form method="post" class="form-horizontal" action="{{route('doctorform',['doctor'=>1])}}" enctype="multipart/form-data">
+							{{csrf_field()}}
+
+							{!! Form::file('image', array('class' => 'image')) !!}
+   							<div class="form-group">
+
+								{!!  Form::label('firstName', 'FirstName', array('class' => 'col-sm-2 control-label'))!!}
+
+
 
                            <div class="col-sm-10">
                               <div class="row">
-                           	   <div class="col-md-4"><input type="text" placeholder="First Name" class="form-control"></div>
-                              	<div class="col-md-4"><input type="text" placeholder="Middle Name" class="form-control"></div>
-                              	<div class="col-md-4"><input type="text" placeholder="Last Nmae" class="form-control"></div>
+
+
+								  <div class="col-md-4">{!! Form::text('firstName', $doctor->firstName, ['class' => 'form-control']) !!}</div>
+                              	<div class="col-md-4">{!! Form::text('middeName', $doctor->middleName, ['class' => 'form-control']) !!}</div>
+								  <div class="col-md-4">{!! Form::text('lastName', $doctor->lastName, ['class' => 'form-control']) !!}</div>
                               </div>
                            </div>
                      	</div>
                        	<div class="hr-line-dashed"></div>
-                       	<div class="form-group"><label class="col-sm-2 control-label">About</label>
-                           <div class="col-sm-10"><textarea class="form-control"></textarea></div>
+                       	<div class="form-group">{!!  Form::label('about', 'About', array('class' => 'col-sm-2 control-label'))!!}
+                           <div class="col-sm-10">{!! Form::textarea('about', $doctor->about, ['class' => 'form-control']) !!}</div>
                        	</div>
                        	<div class="hr-line-dashed"></div>
-                       	<div class="form-group"><label class="col-sm-2 control-label">Speciality</label>
-                           <div class="col-sm-10"><input type="text" class="form-control"></div>
+                       	<div class="form-group">{!!  Form::label('speciality', 'Speciality', array('class' => 'col-sm-2 control-label'))!!}
+                           <div class="col-sm-10">{!! Form::text('speciality', $doctor->speciality, ['class' => 'form-control']) !!}</div>
                        	</div>
                        	<div class="hr-line-dashed"></div>
-                       	<div class="form-group"><label class="col-sm-2 control-label">Education</label>
-                           <div class="col-sm-10"><input type="text" class="form-control"></div>
+                       	<div class="form-group">{!!  Form::label('education', 'Education', array('class' => 'col-sm-2 control-label'))!!}
+                           <div class="col-sm-10">{!! Form::text('education', $doctor->education, ['class' => 'form-control']) !!}</div>
                        	</div>
                        	<div class="hr-line-dashed"></div>
-                       	<div class="form-group"><label class="col-sm-2 control-label">Work Days</label>
+                       	<div class="form-group">{!!  Form::label('workDays', 'Work Days', array('class' => 'col-sm-2 control-label'))!!}
 
                            <div class="col-sm-10">
                            	<label class="checkbox-inline"><input type="checkbox" value="option1" id="inlineCheckbox1"> Sunday </label>
@@ -57,25 +70,25 @@
                            </div>
                        	</div>
                        	<div class="hr-line-dashed"></div>
-                       	<div class="form-group"><label class="col-sm-2 control-label">Facebook</label>
-                           <div class="col-sm-10"><input type="text" class="form-control"></div>
+                       	<div class="form-group">{!!  Form::label('facebook', 'Facebook', array('class' => 'col-sm-2 control-label'))!!}
+                           <div class="col-sm-10">{!! Form::text('facebook', $doctor->facebook, ['class' => 'form-control']) !!}</div>
                        	</div>
                        	<div class="hr-line-dashed"></div>
-                       	<div class="form-group"><label class="col-sm-2 control-label">Twitter</label>
-                           <div class="col-sm-10"><input type="text" class="form-control"></div>
+                       	<div class="form-group">{!!  Form::label('twitter', 'Twitter', array('class' => 'col-sm-2 control-label'))!!}
+                           <div class="col-sm-10">{!! Form::text('twitter', $doctor->twitter, ['class' => 'form-control']) !!}</div>
                        	</div>
                        	<div class="hr-line-dashed"></div>
-                       	<div class="form-group"><label class="col-sm-2 control-label">Skype</label>
-                           <div class="col-sm-10"><input type="text" class="form-control"></div>
+                       	<div class="form-group">{!!  Form::label('skype', 'Skype', array('class' => 'col-sm-2 control-label'))!!}
+                           <div class="col-sm-10">{!! Form::text('skype', $doctor->skype, ['class' => 'form-control']) !!}</div>
                        	</div>
                        	<div class="hr-line-dashed"></div>
-                       	<div class="form-group"><label class="col-sm-2 control-label">Contact</label>
-                           <div class="col-sm-10"><input type="text" class="form-control"></div>
+                       	<div class="form-group">{!!  Form::label('contact', 'Contact', array('class' => 'col-sm-2 control-label'))!!}
+                           <div class="col-sm-10">{!! Form::text('contact', $doctor->contact, ['class' => 'form-control']) !!}</div>
                        	</div>
                     		<div class="hr-line-dashed"></div>
                        	<div class="form-group">
                            <div class="col-sm-4 col-sm-offset-2">
-                               <button class="btn btn-white" type="submit">Cancel</button>
+                               <button class="btn btn-white" type="reset">Cancel</button>
                                <button class="btn btn-primary" type="submit">Save changes</button>
                            </div>
                        	</div>

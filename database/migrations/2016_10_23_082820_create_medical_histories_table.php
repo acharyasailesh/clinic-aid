@@ -2,9 +2,8 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Support\Facades\Schema;
 
-class CreateMedicalHistory extends Migration
+class CreateMedicalHistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +12,9 @@ class CreateMedicalHistory extends Migration
      */
     public function up()
     {
-        Schema::create('medicalHistory', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('patientId');
+        Schema::create('medical_histories', function (Blueprint $table) {
+            $table->increments('id')->unsigned();
+
             $table->integer('doctorId');
             $table->boolean('followUp');//follow up or first visit
             $table->date('visitationDate');
@@ -27,7 +26,12 @@ class CreateMedicalHistory extends Migration
             $table->text('precription');
             $table->date('followUpDate');
             $table->string('referTo');
+            $table->integer('patient_id');
+
+
+
             $table->timestamps();
+
         });
     }
 
@@ -38,6 +42,6 @@ class CreateMedicalHistory extends Migration
      */
     public function down()
     {
-        Schema::drop('medicalHistory');
+        Schema::drop('medical_histories');
     }
 }

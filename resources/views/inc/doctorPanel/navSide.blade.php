@@ -27,7 +27,7 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li ><a href="{{route('doctorProf')}}">My Profile</a></li>
-                        <li ><a href="{{route('doctorform')}}">Edit Profile</a></li>
+                        <li ><a href="{{route('doctorform',['doctor'=>'1'])}}">Edit Profile</a></li>
 
                     </ul>
                 </li>
