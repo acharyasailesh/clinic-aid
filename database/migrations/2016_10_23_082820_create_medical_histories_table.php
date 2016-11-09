@@ -17,15 +17,10 @@ class CreateMedicalHistoriesTable extends Migration
 
             $table->integer('doctorId');
             $table->boolean('followUp');//follow up or first visit
-            $table->date('visitationDate');
+            $table->date('visitDate');
             $table->text('complain');
-            $table->text('existingCondition');
-            $table->string('doctorComment');
-            $table->string('diagnosis');
             $table->string('doctorAdvice');
-            $table->text('precription');
             $table->date('followUpDate');
-            $table->string('referTo');
             $table->integer('patient_id');
 
 

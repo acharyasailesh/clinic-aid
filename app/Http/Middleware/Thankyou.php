@@ -15,8 +15,13 @@ class Thankyou
      */
     public function handle($request, Closure $next)
     {
-        if(isset($request['name'],$request['email'],$request['phoneNo'],$request['message'],$request['subject']))
+         $test=$request->input('name');
+
+        if(isset($request['name'],$request['email'],$request['phoneNo'],$request['message'],$request['subject'])){
             return $next($request);
+        }
+
+
         else
             return redirect()->route('home');
         

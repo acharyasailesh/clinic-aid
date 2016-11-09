@@ -1,5 +1,9 @@
 <?php
 
+
+use Illuminate\Support\Facades\Auth;
+
+
 return [
 
 
@@ -125,11 +129,12 @@ return [
     |
     */
 
+
     'user' => [
         'namespace' => 'App\User',
         'database_field_with_user_name' => 'name',
         'relative_url_to_profile' => '',
-        'relative_url_to_image_assets' => '',
+        'relative_url_to_image_assets' =>'/uploads/Doctor/1.jpg',
         'avatar_image_database_field' => ''
     ],
 

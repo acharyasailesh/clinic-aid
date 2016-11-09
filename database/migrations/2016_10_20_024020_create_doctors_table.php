@@ -20,13 +20,14 @@ class CreateDoctorsTable extends Migration
             $table->string('lastName');
             $table->text('about')->nullable();
             $table->text('education')->nullable();
-            $table->text('workDays');
+            $table->text('workDays')->nullable();;
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
             $table->string('skype')->nullable();
-            $table->string('speciality');
-            $table->string('contact');
+            $table->string('speciality')->nullable();;
+            $table->string('contact')->nullable();;
             $table->string('email')->unique();
+            $table->string('password');
             $table->timestamps();
 
 

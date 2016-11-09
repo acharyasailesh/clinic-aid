@@ -10,7 +10,7 @@
                         </div>
                         <div>
                             <div class="ibox-content no-padding border-left-right">
-                                <img alt="image" class="img-responsive" src="{{asset($dphoto->path)}}">
+                                <img alt="image" class="img-responsive" src="{{asset($dphoto)}}">
                             </div>
                             <div class="ibox-content profile-content">
                                 <h4><strong>Name: {{$doctor->firstName}} {{$doctor->middleName}} {{$doctor->lastName}}</strong></h4>

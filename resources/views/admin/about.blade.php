@@ -2,84 +2,185 @@
 @include('inc.adminPanel.navside')
 @section('adminabout')
 
-                    <div class="wrapper wrapper-content">
+    @if(Session::has('success'))
+        <div class="alert-sucess">
+            <strong>Congrats!!!</strong> You  have Posted About your Clinics<br><br>
+            You can view on <a href="{{route('about.index')}}" title="about">About</a>
 
-            <div class="row">
-                <div class="col-lg-12">
+        </div>
+
+    @endif
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <div class="wrapper wrapper-content">
+
+        <div class="row">
+            <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Post the content</h5>
+                        <h5>Write about your Clinics</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
                             </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#">Config option 1</a>
-                                </li>
-                                <li><a href="#">Config option 2</a>
-                                </li>
-                            </ul>
+
                             <a class="close-link">
                                 <i class="fa fa-times"></i>
                             </a>
                         </div>
                     </div>
                     <div class="ibox-content no-padding">
+                        {!! Form::open(array('route' => 'about.store','enctype' => 'multipart/form-data')) !!}
 
-                        <div class="summernote">
-                            <h3>Lorem Ipsum is simply</h3>
-                            dummy text of the printing and typesetting industry. <strong>Lorem Ipsum has been the industry's</strong> standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-                            <br/>
-                            <br/>
-                            <ul>
-                                <li>Remaining essentially unchanged</li>
-                                <li>Make a type specimen book</li>
-                                <li>Unknown printer</li>
-                            </ul>
+                        {{--<form method="post" class="form-horizontal" action="{{route('test',['doctor'=>$doctor->id])}}" enctype="multipart/form-data">--}}
+                        {{csrf_field()}}
+
+
+                        <div class="form-group">
+                            <br>
+
+                            <br>
+
+
+                            <div class="row">
+                                {!!  Form::label('description', 'Clinics Description', array('class' => 'col-sm-2 control-label'))!!}
+
+                                <div class="col-md-12">{!! Form::textarea('description', $about->description, ['class' => 'form-control']) !!}</div>
+
+
+
+                            </div>
+
+                            <div class="row">
+                                {!!  Form::label('email', 'Clinics Email', array('class' => 'col-sm-2 control-label'))!!}
+
+                                <div class="col-md-12">{!! Form::text('email', $about->email, ['class' => 'form-control']) !!}</div>
+
+
+
+                            </div>
+
+                            <br>
+                            <div class="row">
+
+                                {!!  Form::label('phoneNo', 'Clinics Phone No', array('class' => 'col-sm-2 control-label'))!!}
+
+                                <div class="col-md-12">{!! Form::text('phoneNo', $about->phoneNo, ['class' => 'form-control']) !!}</div>
+                            </div>
+                            <br>
+
+
+
+
+
+                            {{--<div class="summernote">--}}
+                            {{--<h3>Lorem Ipsum is simply</h3>--}}
+                            {{--dummy text of the printing and typesetting industry. <strong>Lorem Ipsum has been the industry's</strong> standard dummy text ever since the 1500s,--}}
+                            {{--when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic--}}
+                            {{--typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with--}}
+                            {{--<br/>--}}
+                            {{--<br/>--}}
+
+                            {{--</div>--}}
+                            {{--<button id="edit" class="btn btn-primary btn-xs m-l-sm" onclick="edit()" type="button">Edit</button>--}}
+                            {{--<button id="save" class="btn btn-primary  btn-xs" onclick="save()" type="button">Save</button>--}}
+
                         </div>
-
                     </div>
                 </div>
             </div>
-            </div>
-            
+
+
+
+        </div>
+        <div class="wrapper wrapper-content animated fadeIn">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Example of Edit by click and save as a html</h5>
-                            <button id="edit" class="btn btn-primary btn-xs m-l-sm" onclick="edit()" type="button">Edit</button>
-                            <button id="save" class="btn btn-primary  btn-xs" onclick="save()" type="button">Save</button>
-                            <div class="ibox-tools">
-                                <a class="collapse-link">
-                                    <i class="fa fa-chevron-up"></i>
-                                </a>
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="fa fa-wrench"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#">Config option 1</a>
-                                    </li>
-                                    <li><a href="#">Config option 2</a>
-                                    </li>
-                                </ul>
-                                <a class="close-link">
-                                    <i class="fa fa-times"></i>
-                                </a>
+                            <div class="row cancel">
+
+
+
+                                <div class="col-md-4">
+
+                                    <button type="submit" class="btn btn-success">Submit</button>
+
+                                </div>
+
                             </div>
-                        </div>
-                        
+
+                            {!! Form::close() !!}
+
+
+                            {{--<form id="my-awesome-dropzone" class="dropzone" action="#">--}}
+                            {{--<div class="dropzone-previews"></div>--}}
+                            {{--<button type="submit" class="btn btn-primary pull-right">Upload</button>--}}
+                            {{----}}
+                            {{--</form>--}}
+                            {{--<div>--}}
+
+                            {{--</div>--}}
+
                     </div>
                 </div>
             </div>
 
+        </div>
+        <div class="footer">
+
+            <div>
+                <strong>Copyright &copy;</strong> Clinicaid.com 2016
             </div>
-        
+        </div>
+
+
+
+
+
+
+        <script>
+            $(document).ready(function(){
+
+                Dropzone.options.myAwesomeDropzone = {
+
+                    autoProcessQueue: false,
+                    uploadMultiple: true,
+                    parallelUploads: 100,
+                    maxFiles: 100,
+
+                    // Dropzone settings
+                    init: function() {
+                        var myDropzone = this;
+
+                        this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            myDropzone.processQueue();
+                        });
+                        this.on("sendingmultiple", function() {
+                        });
+                        this.on("successmultiple", function(files, response) {
+                        });
+                        this.on("errormultiple", function(files, response) {
+                        });
+                    }
+
+                }
+
+            });
+        </script>
+
+
+        @endsection
 
 
 
@@ -87,19 +188,16 @@
 
 
 
-    <script>
-        $(document).ready(function(){
 
-            $('.summernote').summernote();
 
-       });
-        var edit = function() {
-            $('.click2edit').summernote({focus: true});
-        };
-        var save = function() {
-            var aHTML = $('.click2edit').code(); //save HTML If you need(aHTML: array).
-            $('.click2edit').destroy();
-        };
-    </script>
 
-@endsection
+
+
+
+
+
+
+
+
+
+

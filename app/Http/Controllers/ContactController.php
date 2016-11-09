@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use App\Http\Requests\ContactRequest;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,16 @@ class ContactController extends Controller
 
     public function store(ContactRequest $contactRequest)
     {
+
+        $contact=Contact::create([
+
+            'message'=>$contactRequest->message,
+            'name'=>$contactRequest->name,
+            'phoneNo'=>$contactRequest->phoneNo,
+            'subject'=>$contactRequest->subject,
+            'email'=>$contactRequest->email
+        ]);
+
         $email=$contactRequest['email'];
         $data = [
             'bodyMessage' =>  $contactRequest['message']
@@ -29,9 +40,10 @@ class ContactController extends Controller
             $message->from ( 'contact@clinicaid.com', 'We will contact you soon' );
 
             $message->to ( $email )->subject ( 'Thanks For Contacting Us' );
-        } );
 
-        return redirect()->route('thankYou');
+        } );
+        return view('thankyou');
+
 
     }
 

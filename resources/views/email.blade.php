@@ -11,7 +11,7 @@
     <div class="w3-container w3-orange">
 
         <p>
-            <b>. We will inquiry about it soon. Your Response has been Received</b><span
+            <b>Your Response has been Received. We will inquiry about it soon.</b><span
                     style="color: #e36c39; background: #EEE";> </span>
 
         </p>

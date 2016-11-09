@@ -25,6 +25,9 @@
 
 </head>
 
+<div class="container">
+    <br>
+
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -35,24 +38,55 @@
   </ol>
 
   <div class="carousel-inner" role="listbox">
-        @for($i=0;$i<count($image);$i++)
-        
-        
-        <div class="item {{ $i==0 ? 'active': '' }} ">
-                    
-                      <img src="{{asset($image[$i]->path)}}" alt="Hellow" width="auto" height="100px">
-                            <div class="carousel-caption">
-                                     <h2>Hellow this is</h2>
-                            </div>
+        {{--@for($i=0;$i<count($image);$i++)--}}
+        {{----}}
+        {{----}}
+        {{--<div class="item {{ $i==0 ? 'active': '' }} ">--}}
+                    {{----}}
+                      {{--<img src="{{asset($image[$i]->path)}}" alt="Hellow" width="auto" height="100px">--}}
+                            {{--<div class="carousel-caption">--}}
+                                     {{--<h2>Hellow this is</h2>--}}
+                            {{--</div>--}}
 
 
-                    
-        </div>
+                    {{----}}
+        {{--</div>--}}
 
-       @endfor
+       {{--@endfor--}}
+
+
+      @for($i=0;$i<count($slider);$i++)
+
+
+      <div class="item {{ $i==0 ? 'active': '' }} ">
+
+      <img src="{{asset($slider[$i]->path)}}" alt="Hellow" width="auto" height="100px">
+      <div class="carousel-caption">
+      <h2>{{$slider[$i]->title}}</h2>
+      </div>
+
+
+
+      </div>
+
+      @endfor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </div>
-
 
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -63,4 +97,6 @@
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+</div>
+
 </div>

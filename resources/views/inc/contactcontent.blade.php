@@ -1,17 +1,14 @@
-@if(count($errors)>0)
+@if (count($errors) > 0)
     <div class="alert alert-danger">
         <strong>Whoops!</strong> There were some problems with your input.<br><br>
         <ul>
             @foreach ($errors->all() as $error)
-
                 <li>{{ $error }}</li>
-
             @endforeach
-
         </ul>
-
     </div>
 @endif
+
 <!-- Contact Form Starts -->
 <div class="col-sm-8 col-xs-12">
 
@@ -23,7 +20,9 @@
 
 
         {!!  Form::label('name', 'Name') !!}
-        {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
+        {{--<input type="text" name="name" class="form-control" value="{{old('name')}}" id="datepicker">--}}
+
+        {!! Form::text('name', old('name'), ['class' => 'form-control','pattern'=>"[a-z A-Z]+"]) !!}
 
     </div>
 
@@ -31,7 +30,7 @@
     <div class="form-group">
 
         {!!  Form::label('email', 'Email Address',['class' => 'awesome']) !!}
-        {!! Form::text('email', old('email'), ['class' => 'form-control']) !!}
+        {!! Form::email('email', old('email'), ['class' => 'form-control']) !!}
 
     </div>
     <!-- Email Field Ends -->
@@ -47,7 +46,7 @@
     <div class="form-group">
 
         <label for="subject">Subject </label>
-        {!! Form::text('subject', old('subject'), ['class' => 'form-control']) !!}
+        {!! Form::text('subject', old('subject'), ['class' => 'form-control','pattern'=>"[a-z A-Z]+"]) !!}
 
     </div>
     <!-- Subject Field Ends -->

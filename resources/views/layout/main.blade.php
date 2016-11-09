@@ -25,10 +25,11 @@
 
 </head>
 @include('inc.navbar')
+@yield('report')
     @yield('thankyou')
     @yield('home')
     @yield('doctors')
-    @yield('slider');
+    @yield('slider')
 
     @yield('about')
     @yield('news')

@@ -14,8 +14,10 @@ class NewsController extends Controller
     public function index()
     {
 
-        $news=News::all();
-        $image=File::all();
+        $news=News::orderBy('id','desc')->get();
+
+
+        $image=File::orderBy('id','desc')->get();
 
 
         return view('news.index',['news'=>$news,'image'=>$image]);
@@ -27,7 +29,6 @@ class NewsController extends Controller
         $news=News::findorFail($id);
 
         $image=$news->file()->get();
-
 
          return view('news.show',['news'=>$news,'image'=>$image]);
     }

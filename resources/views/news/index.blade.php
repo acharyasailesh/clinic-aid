@@ -24,6 +24,8 @@
                                 <ul class="list-unstyled list-inline post-meta">
                                     <li>
                                         <i class="fa fa-calendar"></i>
+
+
                                         Posted on {{$new->created_at}}
                                     </li>
 
@@ -52,22 +54,7 @@
 
                 </div>
                 <!-- News Post List Ends -->
-                <!-- Pagination Starts -->
-                <div class="clearfix pagination-wrap">
-
-                    <ul class="pagination pull-right">
-                        <li>
-                            <a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-                        </li>
-                        <li class="active"><span>1</span></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li>
-                            <a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Pagination Ends -->
+                
 
             </div>
             <!-- Mainarea Ends -->
@@ -76,6 +63,6 @@
         <!-- Nested Row Ends -->
     </div>
     <!-- Main Container Ends -->
-
+</div>
 @endsection
 

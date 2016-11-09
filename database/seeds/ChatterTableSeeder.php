@@ -42,7 +42,7 @@ class ChatterTableSeeder extends Seeder
                 'id' => 1,
                 'parent_id' => NULL,
                 'order' => 1,
-                'name' => 'Introductions',
+                'name' => 'Hellow',
                 'color' => '#3498DB',
                 'slug' => 'introductions',
                 'created_at' => NULL,

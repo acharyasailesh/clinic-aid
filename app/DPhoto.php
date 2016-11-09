@@ -8,7 +8,7 @@ class DPhoto extends Model
 {
     //
     protected  $table='d_photos';
-    protected  $fillable=['path','name'];
+    protected  $fillable=['path','name','doctor_id'];
     public function doctor()
     {
         $this->belongsTo('App\Doctor');

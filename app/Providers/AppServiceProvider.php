@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\About;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,7 +15,16 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        view()->share('phoneNo',9846142530);
+        $about=About::all()->first();
+        $phoneNo=$about->phoneNo;
+        $email=$about->email;
+        $description=$about->description;
+
+
+        view()->share('phoneNo',$phoneNo);
+        view()->share('email',$email);
+        view()->share('description',$description);
+
     }
 
     /**

@@ -12,7 +12,7 @@
                     <ul class="list-unstyled list-inline">
                         <li><a href="mailto:care@yourhosptialsname.com">
                                 <i class="fa fa-envelope-o"></i>
-                                care@clinicaid.com
+                                {{$email}}
                             </a></li>
                         <li><i class="fa fa-phone"></i> Call Us: {{$phoneNo}}</li>
                     </ul>
@@ -35,8 +35,9 @@
                     <!-- Collapse Button Ends -->
                     <!-- Logo Starts -->
                     <a href="#" class="navbar-brand">
-                        <i class="fa fa-heartbeat"></i>
-                        Hospitals
+                        <img src="{{asset('images/clinicaid.png')}}" width="90px" height="80px">
+
+
                     </a>
                     <!-- Logo Ends -->
                 </div>
@@ -45,11 +46,38 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="{{route('home')}}">Home</a></li>
-                        <li><a href="{{route('about')}}">About</a></li>
-                        <li><a href="{{route('services')}}">Services</a></li>
+                        <li><a href="{{route('about.index')}}">About</a></li>
                         <li><a href="{{route('doctors')}}">Doctors</a></li>
                         <li><a href="{{route('news.index')}}">News</a></li>
                         <li><a href="{{route('contact.index')}}">Contact</a></li>
+                        <li>@if(\Illuminate\Support\Facades\Auth::check())
+
+                                <?php $role_id= Auth::user()->roles->first()->pivot->role_id; ?>
+
+
+                                    @if($role_id==1)
+                                        <a href="{{url('admin')}}">
+
+                                    @elseif ($role_id==2)
+                                                <a href="{{url('patient')}}">
+
+                                    @else
+                                                        <a href="{{url('doctor')}}">
+                                    @endif
+
+                                Welcome {{Auth::user()->name}}
+                                </a>
+                        </li>
+
+                             @else <a href="{{url('login')}}">
+                                Dashboard</a>
+
+                        @endif
+
+
+
+
+
                     </ul>
                 </div>
                 <!-- Navbar Collapse Ends -->

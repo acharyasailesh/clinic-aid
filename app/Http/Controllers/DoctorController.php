@@ -3,39 +3,100 @@
 namespace App\Http\Controllers;
 
 use App\Doctor;
-use App\dphoto;
+
+use App\DPhoto;
 use App\Patient;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 
 class DoctorController extends Controller
 {
     //
 
+    public function __construct()
+    {
+        $this->middleware('roles',['except'=>['info']]);
+    }
+    public function info()
+    {
+        $doctors=Doctor::all();
+        $doctorNo=$doctors->count();
+        $picture=DPhoto::all();
+
+        return view('doctors',compact('doctors','picture','doctorNo'));
+
+    }
 
     public function index()
     {
 
-        $doctor=Doctor::findorFail(1);
+        // $role_id= Auth::user()->roles->first()->pivot->role_id;
+        $user_email=Auth::user()->email;
+        $user_name=Auth::user()->name;
 
-        $dphoto=$doctor->dPhoto->orderBy('id', 'desc')->first();  //return object
+        $doctors=Doctor::all();
+        foreach ($doctors as $doctor){
+            if(($doctor->fname==$user_name) || ($doctor->email==$user_email)){
+                $id= $doctor->id;
+                break;
+            }
+
+        }
+
+        $doctor=Doctor::findorFail($id);
+
+        $dphoto=$doctor->dPhoto->path;  //return object
+
+
 
         return view('doctor.doctorprofile',compact('doctor','dphoto'));
 
     }
 
-    public function show($id)
+    public function show()
     {
-        $doctor=Doctor::findorFail($id)->orderBy('id', 'desc')->first();;
+        $user_email=Auth::user()->email;
+        $user_name=Auth::user()->name;
 
-        return view('doctor.doctor_form',compact('doctor'));
+        $doctors=Doctor::all();
+        foreach ($doctors as $doctor){
+            if($doctor->email==$user_email){
+                $id= $doctor->id;
+                break;
+            }
+
+        }
+
+
+        $doctor=Doctor::findorFail($id);
+
+        $dphoto=$doctor->dPhoto->path;
+
+        return view('doctor.doctor_form',compact('doctor','dphoto'));
 
     }
 
-    public function edit(Request $request, $id)
+    public function edit(Request $request)
     {
+
+        $user_email=Auth::user()->email;
+        $user_name=Auth::user()->name;
+
+        $doctors=Doctor::all();
+        foreach ($doctors as $doctor){
+            if($doctor->email==$user_email){
+                $id= $doctor->id;
+                break;
+            }
+
+        }
+
+
+
         $doctor=Doctor::findorFail($id);
          $dphoto=$doctor->dphoto();
         $doctor->firstName=$request->firstName;
@@ -51,11 +112,15 @@ class DoctorController extends Controller
         $doctor->speciality=$request->speciality;
         $doctor->contact=$request->contact;
         $doctor->save();
-
+        $dphoto=$doctor->dPhoto;
 
         if(Input::hasFile('image')){
+
+
             $doctor=Doctor::findorFail($id);
-            $dphoto=new DPhoto;
+            $dphoto=$doctor->dPhoto;
+
+            //$dphoto=new DPhoto;
             $dphotoImage=Input::file('image');
 
             //$length=$news->count();
@@ -76,7 +141,7 @@ class DoctorController extends Controller
 
 
 
-         return view('doctor.doctor_form',compact('doctor'));
+         return view('doctor.doctor_form',compact('doctor','dphoto'));
 
 
     }
@@ -84,19 +149,64 @@ class DoctorController extends Controller
 
     public function viewPatient()
     {
-        $Doctor=Doctor::findOrFail(1);
+        $user_email=Auth::user()->email;
+        $user_name=Auth::user()->name;
+
+        $doctors=Doctor::all();
+        foreach ($doctors as $doctor){
+            if($doctor->email==$user_email){
+                $id= $doctor->id;
+                break;
+            }
+
+        }
+
+        $Doctor=Doctor::findOrFail($id);
+        $dphoto=$doctor->dPhoto->path;
         $patient=$Doctor->patients()->orderBy('id', 'desc')->get();  //returns array of object
 
 
 
 
-        return view('doctor.viewpatient',compact('patient','Doctor'));
+        return view('doctor.viewpatient',compact('patient','Doctor','dphoto'));
    }
 
 
+    public function viewPatientFollowup()
+    {
+        $user_email=Auth::user()->email;
+        $user_name=Auth::user()->name;
+
+
+        $doctors=Doctor::all();
+
+        foreach ($doctors as $doctor){
+            if($doctor->email==$user_email){
+                $id= $doctor->id;
+                break;
+            }
+
+        }
+        $Doctor=Doctor::findOrFail($id);
+        $dphoto=$doctor->dPhoto->path;
+        $today = date("Y-m-d");
+        $patient=$Doctor->patients()->where('followUp',$today)->orderBy('id', 'desc')->get();  //returns array of object
+        return view('doctor.viewpatientfollowlist',compact('patient','Doctor','dphoto'));
 
 
 
+
+
+
+
+    }
+
+    public function addPatient()
+    {
+        $doctors=Doctor::all();
+
+        return view('admin.form',compact('doctors'));
+    }
 
 
 

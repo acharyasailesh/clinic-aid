@@ -8,41 +8,40 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Dropzone Area</h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="ibox-content">
-                        <form id="my-awesome-dropzone" class="dropzone" action="#">
-                            <div class="dropzone-previews"></div>
-                            <button type="submit" class="btn btn-primary pull-right">Submit this photo as profile picture</button>
-                        </form>
+                        <h5>Patient Form <small>Details of the Doctor.</small></h5>
 
                     </div>
+
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
         </div>
 
     </div>
     <div class="ibox-content">
-        <form method="post" class="form-horizontal" action="/patient">
-            {{method_field('PUT')}}
-            {{ csrf_field() }}
+        <form method="post" class="form-horizontal" action="{{route('patientform',['patient'=>$patient->id])}}" enctype="multipart/form-data">
+            {{csrf_field()}}
+
+            {!! Form::file('image', array('class' => 'image')) !!}
+            <br>
 
             <div class="form-group"><label class="col-sm-2 control-label">Name</label>
 
                 <div class="col-sm-10">
                     <div class="row">
-                        <div class="col-md-4"><input type="text" class="form-control" name="firstName" value="{{ $details['firstName'] }}"></div>
-                        <div class="col-md-4"><input type="text" class="form-control" name="middleName" value="{{ $details['middleName'] }}"></div>
-                        <div class="col-md-4"><input type="text" class="form-control" name="lastName" value="{{ $details['lastName'] }}"></div>
+                        <div class="col-md-4"><input type="text" class="form-control" name="firstName" value="{{ $patient['firstName'] }}"></div>
+                        <div class="col-md-4"><input type="text" class="form-control" name="middleName" value="{{ $patient['middleName'] }}"></div>
+                        <div class="col-md-4"><input type="text" class="form-control" name="lastName" value="{{ $patient['lastName'] }}"></div>
                     </div>
                 </div>
             </div>
@@ -51,9 +50,8 @@
 
                 <div class="col-sm-10">
                     <div class="row">
-                        <div class="col-md-4"><input type="text" class="form-control" value="{{ $details['year'] }}"></div>
-                        <div class="col-md-4"><input type="text" class="form-control" value="{{ $details['month'] }}"></div>
-                        <div class="col-md-4"><input type="text" class="form-control" value="{{ $details['day'] }}"></div>
+
+                        <div class="col-md-12"><input type="date" class="form-control" value="{{ $patient['DOB'] }}" name="DOB"></div>
                     </div>
                 </div>
             </div>
@@ -62,29 +60,29 @@
                 <div class="col-sm-10">
                     <div class="row">
 
-                        <div class="radio col-xs-3"><label> <input type="radio" @if( $details['gender'] === 1 ) checked="checked" @endif value="1" id="genderRadios1" name="Gender"> Male</label></div>
+                        <div class="radio col-xs-3"><label> <input type="radio" @if( $patient['gender'] === 1 ) checked="checked" @endif value="1" id="genderRadios1" name="Gender"> Male</label></div>
 
-                        <div class="radio col-xs-3"><label> <input type="radio" @if( $details['gender'] === 2 ) checked="checked" @endif value="2" id="genderRadios2" name="Gender"> Female</label></div>
+                        <div class="radio col-xs-3"><label> <input type="radio" @if( $patient['gender'] === 2 ) checked="checked" @endif value="2" id="genderRadios2" name="Gender"> Female</label></div>
 
-                        <div class="radio col-xs-3"><label> <input type="radio" @if( $details['gender'] === 3 ) checked="checked" @endif value="3" id="genderRadios3" name="Gender"> Other</label></div>
+                        <div class="radio col-xs-3"><label> <input type="radio" @if( $patient['gender'] === 3 ) checked="checked" @endif value="3" id="genderRadios3" name="Gender"> Other</label></div>
                     </div>
                 </div>
             </div>
             <div class="hr-line-dashed"></div>
 
             <div class="form-group"><label class="col-sm-2 control-label">Address</label>
-                <div class="col-sm-10"><input type="text" class="form-control" name="address" value="{{ $details['address'] }}"></div>
+                <div class="col-sm-10"><input type="text" class="form-control" name="address" value="{{ $patient['address'] }}"></div>
             </div>
             <div class="hr-line-dashed"></div>
             <div class="form-group"><label class="col-sm-2 control-label">Contact</label>
-                <div class="col-sm-10"><input type="text" class="form-control" name="contact" value="{{ $details['contact'] }}"></div>
+                <div class="col-sm-10"><input type="text" class="form-control" name="contact" value="{{ $patient['contact'] }}"></div>
             </div>
             <div class="hr-line-dashed"></div>
 
 
 
             <div class="form-group"><label class="col-sm-2 control-label">About</label>
-                <div class="col-sm-10"><textarea class="form-control" name="about">{{ $details['about'] }}</textarea></div>
+                <div class="col-sm-10"><textarea class="form-control" name="about">{{ $patient['about'] }}</textarea></div>
             </div>
             <div class="hr-line-dashed"></div>
             <div class="form-group">

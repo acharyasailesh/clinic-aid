@@ -35,7 +35,7 @@ class EmailController extends Controller
             $message->to ( $email )->subject ( 'Thanks For Contacting Us' );
         } );
 
-        return redirect()->route('thankYou');
+        return redirect()->url('thankYou');
 
     }  //end of send function
 
@@ -43,7 +43,7 @@ class EmailController extends Controller
     public function thankYou()
     {
 
-        return view('thankYou');
+        return view('thankyou');
 
     }
 
@@ -51,8 +51,12 @@ class EmailController extends Controller
     {
         $patient=Patient::where('id',$id)->first();
         $followUpdate=$request->input('followUp');
+
         $patient->followUp= $followUpdate;
+
+
         $patient->save();
+
         $email=$patient->email;
         $doctorEmail=$dEmail;
         $doctor=Doctor::where('email',$doctorEmail)->first();
@@ -60,9 +64,13 @@ class EmailController extends Controller
 
       $followUpdate= [
                         'followDate'=>$request->followUp,
-          '             firstName'=>$doctor->firstName,
-                        'middleName'=>$doctor->lastName
+                        'firstName'=>$doctor->firstName,
+                        'middleName'=>$doctor->middleName,
+                        'lastName'=>$doctor->lastName
+
                     ];
+
+
 
         Mail::send ( 'Doctoremail', $followUpdate, function ($message)use ($email,$doctorEmail)  {
 
@@ -71,7 +79,7 @@ class EmailController extends Controller
             $message->to ( $email )->subject ( 'Updated Appointment Date' );
         } );
 
-       return redirect()->back();
+       return redirect()->back()->with('success','Patient Appointment date Updated');
 
 
 

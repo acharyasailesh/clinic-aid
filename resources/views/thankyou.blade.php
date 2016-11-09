@@ -12,4 +12,7 @@
         <p style="text-align: center;"><span style="font-family: arial,helvetica,sans-serif;">  <span style="font-size: large;">You will receive a confirmation email shortly acknowledging your request.  We are glad to have your feedback.</span> </span></p>
     </div>
 
+</div>
+    <br>
 @endsection
+

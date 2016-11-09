@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -28,7 +29,8 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+
+    protected $redirectTo = '/doctor';
 
     /**
      * Create a new authentication controller instance.
@@ -63,10 +65,35 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
     }
+  //To go to separate dashboard
+    protected function authenticated($request, $user)
+    {
+
+         $role_id= Auth::user()->roles->first()->pivot->role_id;
+
+        if($role_id==1)  return redirect()->intended('admin');
+        elseif ($role_id==2) return redirect()->intended('patient');
+        else
+            return redirect()->intended('doctor');
+
+    }
+  //Later Added
+    public function showRegistrationForm()
+    {
+        return redirect('/');
+    }
+
+    public function register()
+    {
+
+    }
+
+
 }

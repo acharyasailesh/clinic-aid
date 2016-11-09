@@ -27,9 +27,18 @@ class ContactRequest extends Request
             //
             'message'=>'required',
             'name'=>'required',
-            'phoneNo'=>'required',
+            'phoneNo'=>'required|numeric',
             'subject'=>'required',
-            'email'=>'required'
+            'email'=>'required|email'
+        ];
+    }
+
+
+    public function messages()
+    {
+        return [
+            'message.required' => 'A Message is required',
+            'name.required'  => 'Name is required',
         ];
     }
 }

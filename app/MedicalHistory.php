@@ -11,4 +11,7 @@ class MedicalHistory extends Model
     {
         return $this->belongsTo('App\Patient');
     }
+
+    protected $fillable=['complain','followUp','doctorAdvice','followUpDate','referTo','patient_id','visitDate','doctorId'];
+
 }
