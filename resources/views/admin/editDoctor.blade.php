@@ -204,12 +204,12 @@
                                                          </span> </input>
                                                     Education
                                                 </li>
-                                                <li class="list-group-item">
-                                                    <span class="pull-right">
-                                                        <input type="text" value="{{$doctor->workDays}}" name="workDays">
-                                                         </span> </input>
-                                                    Work days
-                                                </li>
+                                                {{--<li class="list-group-item">--}}
+                                                    {{--<span class="pull-right">--}}
+                                                        {{--<input type="text" value="{{$doctor->workDays}}" name="workDays">--}}
+                                                         {{--</span> </input>--}}
+                                                    {{--Work days--}}
+                                                {{--</li>--}}
                                                 <li class="list-group-item">
                                                     <span class="pull-right">
                                                         <input type="text" value="{{$doctor->facebook}}" name="facebook">

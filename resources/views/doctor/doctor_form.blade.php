@@ -51,17 +51,17 @@
                            <div class="col-sm-10">{!! Form::text('education', $doctor->education, ['class' => 'form-control']) !!}</div>
                        	</div>
                        	<div class="hr-line-dashed"></div>
-                       	<div class="form-group">{!!  Form::label('workDays', 'Work Days', array('class' => 'col-sm-2 control-label'))!!}
+                       	{{--<div class="form-group">{!!  Form::label('workDays', 'Work Days', array('class' => 'col-sm-2 control-label'))!!}--}}
 
-                           <div class="col-sm-10">
-                           	<label class="checkbox-inline"><input type="checkbox" value="option1" id="inlineCheckbox1"> Sunday </label>
-                           	<label class="checkbox-inline"><input type="checkbox" value="option2" id="inlineCheckbox2"> Monday </label>
-                           	<label class="checkbox-inline"><input type="checkbox" value="option3" id="inlineCheckbox3"> Tuesday </label>
-                           	<label class="checkbox-inline"><input type="checkbox" value="option1" id="inlineCheckbox1"> Wednesday </label>
-                           	<label class="checkbox-inline"><input type="checkbox" value="option2" id="inlineCheckbox2"> Thursday </label>
-                           	<label class="checkbox-inline"><input type="checkbox" value="option3" id="inlineCheckbox3"> Saturday </label>
-                           </div>
-                       	</div>
+                           {{--<div class="col-sm-10">--}}
+                           	{{--<label class="checkbox-inline"><input type="checkbox" value="option1" id="inlineCheckbox1"> Sunday </label>--}}
+                           	{{--<label class="checkbox-inline"><input type="checkbox" value="option2" id="inlineCheckbox2"> Monday </label>--}}
+                           	{{--<label class="checkbox-inline"><input type="checkbox" value="option3" id="inlineCheckbox3"> Tuesday </label>--}}
+                           	{{--<label class="checkbox-inline"><input type="checkbox" value="option1" id="inlineCheckbox1"> Wednesday </label>--}}
+                           	{{--<label class="checkbox-inline"><input type="checkbox" value="option2" id="inlineCheckbox2"> Thursday </label>--}}
+                           	{{--<label class="checkbox-inline"><input type="checkbox" value="option3" id="inlineCheckbox3"> Saturday </label>--}}
+                           {{--</div>--}}
+                       	{{--</div>--}}
                        	<div class="hr-line-dashed"></div>
                        	<div class="form-group">{!!  Form::label('facebook', 'Facebook', array('class' => 'col-sm-2 control-label'))!!}
                            <div class="col-sm-10">{!! Form::text('facebook', $doctor->facebook, ['class' => 'form-control']) !!}</div>

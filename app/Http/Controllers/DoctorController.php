@@ -7,6 +7,7 @@ use App\Doctor;
 use App\DPhoto;
 use App\Patient;
 use App\User;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,12 +16,12 @@ use Illuminate\Support\Facades\Input;
 
 class DoctorController extends Controller
 {
-    //
 
-    public function __construct()
+        public function __construct()
     {
         $this->middleware('roles',['except'=>['info']]);
     }
+
     public function info()
     {
         $doctors=Doctor::all();
@@ -104,7 +105,7 @@ class DoctorController extends Controller
         $doctor->lastName=$request->lastName;
         $doctor->about=$request->about;
         $doctor->education=$request->education;
-        $doctor->workDays=$request->workDays;
+//        $doctor->workDays=$request->workDays;
         $doctor->facebook=$request->facebook;
         $doctor->twitter=$request->twitter;
         $doctor->skype=$request->skype;

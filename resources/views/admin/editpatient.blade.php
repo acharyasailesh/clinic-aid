@@ -215,9 +215,7 @@
                                             <p>
                                                 {{$patient->about}}
                                             </p>
-                                            <button type="button" class="btn btn-primary btn-sm btn-block"><i
-                                                        class="fa fa-envelope"></i> Send Message
-                                            </button>
+
                                         </div>
                                     </div>
                                     <div class="client-detail">

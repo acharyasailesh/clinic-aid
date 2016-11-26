@@ -181,7 +181,7 @@ class PatientController extends Controller
         $doctor->education=$request['education'];
         $doctor->facebook=$request['facebook'];
         $doctor->twitter=$request['twitter'];
-        $doctor->workDays=$request['workDays'];
+//        $doctor->workDays=$request['workDays'];
         $doctor->skype=$request['skype'];
         $doctor->contact=$request['contact'];
         $doctor->speciality=$request['speciality'];

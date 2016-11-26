@@ -26,12 +26,20 @@ class UserTableSeeder extends Seeder
 
 
 
+//        $admin=new User();
+//        $admin->name='Sabina';
+//        $admin->email='sabina@outlook.com';
+//        $admin->password=bcrypt('terminator4');
+//        $admin->save();
+//        $admin->roles()->attach($role_admin);
+
         $admin=new User();
-        $admin->name='Sabina';
-        $admin->email='sabina@outlook.com';
+        $admin->name='Sagar';
+        $admin->email='sagar@outlook.com';
         $admin->password=bcrypt('terminator4');
         $admin->save();
         $admin->roles()->attach($role_admin);
+
 
 
 //        $doctor=new User();

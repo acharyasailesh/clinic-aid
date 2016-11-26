@@ -9,6 +9,7 @@ use App\User;
 
 Route::get('/', ['as' => 'home', 'uses' => 'MainController@index']);
 
+
 Route::resource('about','AboutController',['only'=>['index','store']]);
 Route::resource('contact','ContactController',['only'=>['index','store']]);
 Route::resource('news', 'NewsController', ['only' => ['index', 'show']]);

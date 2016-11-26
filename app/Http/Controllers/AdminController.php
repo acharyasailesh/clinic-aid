@@ -102,6 +102,8 @@ class AdminController extends Controller
         $this->validate($request,[
            'email'=>'required|unique:users|email',
             'password'=>'required|min:5',
+            'firstName'=>'required',
+            'lastName'=>'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $role=Role::where('name','doctor')->first();
@@ -116,7 +118,7 @@ class AdminController extends Controller
             'lastName'=>$request->lastName,
             'about'=>$request->about,
             'education'=>$request->education,
-            'workDays'=>$request->workDays,
+//            'workDays'=>$request->workDays,
             'facebook'=>$request->facebook,
             'twitter'=>$request->twitter,
             'speciality'=>$request->speciality,
