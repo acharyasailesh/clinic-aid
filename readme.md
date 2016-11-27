@@ -11,8 +11,8 @@ Clinic Aid is a web application developed at Laravel 5.2. It is a major Project 
 
 Team Members includes:
 
-Sagar Subedi https://github.com/ragas49(Front-design)
-Sailesh  https://github.com/acharyasailesh/(Back end developer)
-Santosh Sharma https://github.com/mesuntos(Documentation and front-design)
+Sagar Subedi https://github.com/ragas49(Front-design)<br/>
+Sailesh  https://github.com/acharyasailesh/(Back end developer)<br/>
+Santosh Sharma https://github.com/mesuntos(Documentation and front-design)<br/
 Soodep Dhakal https://github.com/ragas49( Documentation and front design)
  
