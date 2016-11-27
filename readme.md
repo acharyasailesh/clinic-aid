@@ -1,27 +1,18 @@
-# Laravel PHP Framework
+# Clinic Aid
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Clinic Aid is a web application developed at Laravel 5.2. It is a major Project of GCES(Ganaki College of Engineering & Science) done for Bachelor of Software Enginnering. The salient features of this projects includes:
+1) Administrator(Clinic Owner) is able to to view the arrivalpatient no in graph of different month of different year. Reatively, he/she could compare consequtive year months.
+2) Doctors could change the follow up date of patients and notify about updated followup dates.
+3) Patient could view their medical history report in PDF format .
+4) Forum is included where doctor,patient and adminsitrator could communicate to each other
+5) Doctors,patients could update their profile.
+6) Crude operation on Patients and doctors and many more.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Team Members includes:
 
-## Official Documentation
-
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Sagar Subedi https://github.com/ragas49(Front-design)
+Sailesh  https://github.com/acharyasailesh/(Back end developer)
+Santosh Sharma https://github.com/mesuntos(Documentation and front-design)
+Soodep Dhakal https://github.com/ragas49( Documentation and front design)
+ 
